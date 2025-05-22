@@ -1,0 +1,1157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_J3hB4Ul0Ee2nos-FmUeMHQ" externalChecksum="7824986:1438690353:643269079">
+  <languageCode>fr_FR</languageCode>
+  <ruleset vocabularyUpdateStamp="_CAgCUEl0Ee2nos-FmUeMHQ" vocabulary="../../../InsuranceSalesProcess.ecore#/">
+    <rule>
+      <action>
+        <opaqueExpression expression="coverages.taxPercent = 19">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.taxPercent = 19" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="taxPercent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.taxPercent">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="engines->size = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines" datatype="Integer" termtype="COLLECTION" fulltext="engines->size">
+                <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="engines->size" rhs="1"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="engines.power->avg in [0..70]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines.power->avg in 0 .. 70" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines_power" datatype="Decimal" termtype="COLLECTION" fulltext="engines.power->avg">
+                <parentTerm text="power" datatype="Integer" termtype="ATTRIBUTE" fulltext="engines.power">
+                  <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="engines.power->avg" rhs="[0..70]"/>
+      </condition>
+      <action/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="coverages.premium.yearly = 17.6">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.premium.yearly = 17.6" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="engines->size = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines" datatype="Integer" termtype="COLLECTION" fulltext="engines->size">
+                <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="engines->size" rhs="1"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="engines.power->avg in (70..120]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines.power->avg in ( 70 .. 120 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines_power" datatype="Decimal" termtype="COLLECTION" fulltext="engines.power->avg">
+                <parentTerm text="power" datatype="Integer" termtype="ATTRIBUTE" fulltext="engines.power">
+                  <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="engines.power->avg" rhs="(70..120]"/>
+      </condition>
+      <action/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="coverages.premium.yearly = 22.00">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.premium.yearly = 22.00" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="engines->size = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines" datatype="Integer" termtype="COLLECTION" fulltext="engines->size">
+                <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="engines->size" rhs="1"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="engines.power->avg in (120..350]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines.power->avg in ( 120 .. 350 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines_power" datatype="Decimal" termtype="COLLECTION" fulltext="engines.power->avg">
+                <parentTerm text="power" datatype="Integer" termtype="ATTRIBUTE" fulltext="engines.power">
+                  <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="engines.power->avg" rhs="(120..350]"/>
+      </condition>
+      <action/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="coverages.premium.yearly = 27.5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.premium.yearly = 27.5" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="engines->size = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines" datatype="Integer" termtype="COLLECTION" fulltext="engines->size">
+                <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="engines->size" rhs="1"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="engines.power->avg > 350">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines.power->avg > 350" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines_power" datatype="Decimal" termtype="COLLECTION" fulltext="engines.power->avg">
+                <parentTerm text="power" datatype="Integer" termtype="ATTRIBUTE" fulltext="engines.power">
+                  <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="engines.power->avg" rhs="> 350"/>
+      </condition>
+      <action/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="coverages.premium.yearly = 33">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.premium.yearly = 33" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="engines->size = 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines->size = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines" datatype="Integer" termtype="COLLECTION" fulltext="engines->size">
+                <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="engines->size" rhs="2"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="engines.power->avg in [0..230]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines.power->avg in 0 .. 230" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines_power" datatype="Decimal" termtype="COLLECTION" fulltext="engines.power->avg">
+                <parentTerm text="power" datatype="Integer" termtype="ATTRIBUTE" fulltext="engines.power">
+                  <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="engines.power->avg" rhs="[0..230]"/>
+      </condition>
+      <action/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="coverages.premium.yearly = 38.5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.premium.yearly = 38.5" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="engines->size = 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines->size = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines" datatype="Integer" termtype="COLLECTION" fulltext="engines->size">
+                <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="engines->size" rhs="2"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="engines.power->avg in (230..350]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines.power->avg in ( 230 .. 350 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines_power" datatype="Decimal" termtype="COLLECTION" fulltext="engines.power->avg">
+                <parentTerm text="power" datatype="Integer" termtype="ATTRIBUTE" fulltext="engines.power">
+                  <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="engines.power->avg" rhs="(230..350]"/>
+      </condition>
+      <action/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="coverages.premium.yearly = 44.01">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.premium.yearly = 44.01" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="engines->size = 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines->size = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines" datatype="Integer" termtype="COLLECTION" fulltext="engines->size">
+                <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="engines->size" rhs="2"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="engines.power->avg in (350..460]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines.power->avg in ( 350 .. 460 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines_power" datatype="Decimal" termtype="COLLECTION" fulltext="engines.power->avg">
+                <parentTerm text="power" datatype="Integer" termtype="ATTRIBUTE" fulltext="engines.power">
+                  <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="engines.power->avg" rhs="(350..460]"/>
+      </condition>
+      <action/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="coverages.premium.yearly = 60.50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.premium.yearly = 60.50" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.0 #//@ruleset/@logicalVariables.0/@extension.0">
+      <opaqueExpression expression="products.productId in {horizon}">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.productId in { 'horizon' }" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <referencedTermList>
+            <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="products.productId">
+              <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.0 #//@ruleset/@logicalVariables.0/@extension.0">
+      <opaqueExpression expression="products.eligible = T">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.eligible = T" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="eligible" datatype="Boolean" termtype="ATTRIBUTE" fulltext="products.eligible">
+              <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.0 #//@ruleset/@logicalVariables.0/@extension.0 #//@ruleset/@logicalVariables.0/@extension.0/@extension.0"/>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.0 #//@ruleset/@logicalVariables.0/@extension.0 #//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+      <opaqueExpression expression="coverages.coverageId in {engineDamage}">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.coverageId in { 'engineDamage' }" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <referencedTermList>
+            <terms text="coverageId" datatype="String" termtype="ATTRIBUTE" fulltext="coverages.coverageId">
+              <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement post="Info" category="Debug" ruleModelElements="#//@ruleset/@rules.1/@actions.1 #//@ruleset/@rules.2/@actions.1 #//@ruleset/@rules.3/@actions.1 #//@ruleset/@rules.4/@actions.1 #//@ruleset/@rules.5/@actions.1 #//@ruleset/@rules.6/@actions.1 #//@ruleset/@rules.7/@actions.1" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+      <text expression="Définition de la prime &quot;{coverages.coverageId}&quot; qui dépend du nombre de moteur et de la puissance moyenne. Prime = {coverages.premium.yearly} € HT ({coverages.taxPercent} %).">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Définition de la prime  + \&quot; + coverages.coverageId + \&quot; +  qui dépend du nombre de moteur et de la puissance moyenne. Prime =  + coverages_premium.yearly +  € HT ( + coverages.taxPercent +  %)." expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="coverageId" datatype="String" termtype="ATTRIBUTE" fulltext="coverages.coverageId">
+              <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </parentTerm>
+            </terms>
+            <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+              <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </parentTerm>
+            </terms>
+            <terms text="taxPercent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.taxPercent">
+              <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable entity="../../../InsuranceSalesProcess.ecore#//Rating" filters="#//@ruleset/@filters.2 #//@ruleset/@filters.3 #//@ruleset/@filters.0 #//@ruleset/@filters.1">
+      <extension explicit="true" association="true" entity="../../../InsuranceSalesProcess.ecore#//Product" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Rating/products" filters="#//@ruleset/@filters.2 #//@ruleset/@filters.3 #//@ruleset/@filters.0 #//@ruleset/@filters.1">
+        <alias value="products"/>
+        <extension explicit="true" association="true" entity="../../../InsuranceSalesProcess.ecore#//Coverage" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Product/coverages" ruleStatements="#//@ruleset/@ruleStatements.0" filters="#//@ruleset/@filters.2 #//@ruleset/@filters.3">
+          <alias value="coverages"/>
+          <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Amount" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Coverage/premium">
+            <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+          </extension>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Coverage/eligible"/>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Coverage/coverageId"/>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Coverage/taxPercent"/>
+        </extension>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Product/productId"/>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Product/taxPercent"/>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+      </extension>
+      <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Risk" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Rating/risk">
+        <extension explicit="true" association="true" entity="../../../InsuranceSalesProcess.ecore#//Engine" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Risk/engines">
+          <alias value="engines"/>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Engine/power"/>
+        </extension>
+      </extension>
+    </logicalVariable>
+    <logicalVariable entity="../../../InsuranceSalesProcess.ecore#//Amount"/>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="19" sashWeightConditionsIf="22">
+    <actionSection rowCount="47" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="coverages.taxPercent = 19">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.taxPercent = 19" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="taxPercent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.taxPercent">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="coverages.premium.yearly">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.premium.yearly" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="products.productId in {horizon}" filter="#//@ruleset/@filters.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="products.eligible = T" filter="#//@ruleset/@filters.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="coverages.coverageId in {engineDamage}" filter="#//@ruleset/@filters.3"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="products.productId in {horizon}" filter="#//@ruleset/@filters.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="products.eligible = T" filter="#//@ruleset/@filters.1"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="coverages.coverageId in {engineDamage}" filter="#//@ruleset/@filters.3"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="coverages.coverageId in {engineDamage}" filter="#//@ruleset/@filters.3"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.1"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.2"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@extension.0/@referencedAttributes.0"/>
+              </children>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.2"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0/@referencedAttributes.0"/>
+            </children>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1"/>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="52">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="products.productId in {horizon}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.productId in { 'horizon' }" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="products.productId">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.1">
+        <expressionCell external="products.eligible = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.eligible = T" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="eligible" datatype="Boolean" termtype="ATTRIBUTE" fulltext="products.eligible">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.2">
+        <expressionCell/>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.3">
+        <expressionCell external="coverages.coverageId in {engineDamage}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.coverageId in { 'engineDamage' }" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="coverageId" datatype="String" termtype="ATTRIBUTE" fulltext="coverages.coverageId">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="966" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="B1:B7"/>
+        <text external="Définition de la prime &quot;{coverages.coverageId}&quot; qui dépend du nombre de moteur et de la puissance moyenne. Prime = {coverages.premium.yearly} € HT ({coverages.taxPercent} %).">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Définition de la prime  + \&quot; + coverages.coverageId + \&quot; +  qui dépend du nombre de moteur et de la puissance moyenne. Prime =  + coverages_premium.yearly +  € HT ( + coverages.taxPercent +  %)." expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="coverageId" datatype="String" termtype="ATTRIBUTE" fulltext="coverages.coverageId">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="taxPercent" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.taxPercent">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="48" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="engines->size">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines->size" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines" datatype="Integer" termtype="COLLECTION" fulltext="engines->size">
+                <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="engines.power->avg">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines.power->avg" datatype="Decimal" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines_power" datatype="Decimal" termtype="COLLECTION" fulltext="engines.power->avg">
+                <parentTerm text="power" datatype="Integer" termtype="ATTRIBUTE" fulltext="engines.power">
+                  <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="9">
+      <ruleColumnList ruleId="0" columnWidth="26" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="114" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines" datatype="Integer" termtype="COLLECTION" fulltext="engines->size">
+                <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="[0..70]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines.power->avg in 0 .. 70" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines_power" datatype="Decimal" termtype="COLLECTION" fulltext="engines.power->avg">
+                <parentTerm text="power" datatype="Integer" termtype="ATTRIBUTE" fulltext="engines.power">
+                  <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="17.6">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.premium.yearly = 17.6" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="123" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines" datatype="Integer" termtype="COLLECTION" fulltext="engines->size">
+                <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="(70..120]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines.power->avg in ( 70 .. 120 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines_power" datatype="Decimal" termtype="COLLECTION" fulltext="engines.power->avg">
+                <parentTerm text="power" datatype="Integer" termtype="ATTRIBUTE" fulltext="engines.power">
+                  <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="22.00">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.premium.yearly = 22.00" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="113" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines" datatype="Integer" termtype="COLLECTION" fulltext="engines->size">
+                <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="(120..350]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines.power->avg in ( 120 .. 350 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines_power" datatype="Decimal" termtype="COLLECTION" fulltext="engines.power->avg">
+                <parentTerm text="power" datatype="Integer" termtype="ATTRIBUTE" fulltext="engines.power">
+                  <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="27.5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.premium.yearly = 27.5" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="120" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines->size = 1" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines" datatype="Integer" termtype="COLLECTION" fulltext="engines->size">
+                <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="> 350">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines.power->avg > 350" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines_power" datatype="Decimal" termtype="COLLECTION" fulltext="engines.power->avg">
+                <parentTerm text="power" datatype="Integer" termtype="ATTRIBUTE" fulltext="engines.power">
+                  <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="33">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.premium.yearly = 33" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="110" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines->size = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines" datatype="Integer" termtype="COLLECTION" fulltext="engines->size">
+                <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="[0..230]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines.power->avg in 0 .. 230" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines_power" datatype="Decimal" termtype="COLLECTION" fulltext="engines.power->avg">
+                <parentTerm text="power" datatype="Integer" termtype="ATTRIBUTE" fulltext="engines.power">
+                  <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="38.5">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.premium.yearly = 38.5" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="111" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines->size = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines" datatype="Integer" termtype="COLLECTION" fulltext="engines->size">
+                <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="(230..350]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines.power->avg in ( 230 .. 350 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines_power" datatype="Decimal" termtype="COLLECTION" fulltext="engines.power->avg">
+                <parentTerm text="power" datatype="Integer" termtype="ATTRIBUTE" fulltext="engines.power">
+                  <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="44.01">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.premium.yearly = 44.01" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines->size = 2" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines" datatype="Integer" termtype="COLLECTION" fulltext="engines->size">
+                <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="(350..460]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="engines.power->avg in ( 350 .. 460 ]" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="engines_power" datatype="Decimal" termtype="COLLECTION" fulltext="engines.power->avg">
+                <parentTerm text="power" datatype="Integer" termtype="ATTRIBUTE" fulltext="engines.power">
+                  <parentTerm text="engines" datatype="Engine" termtype="ENTITY" fulltext="engines" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+                    <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="60.50">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="coverages.premium.yearly = 60.50" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="coverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                  <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="coverages.premium">
+                <parentTerm text="coverages" datatype="Coverage" termtype="ENTITY" fulltext="coverages">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_w0mg8Wv3Ee2b48ZqKZv1Zg" externalChecksum="7824986:4082745666:2146616488" rulesheetAssets="AutoRefuseBoat.ers#/ AutoRefuseCustomer.ers#/ AutoRefuseNavigation.ers#/" ruleflowAssets="ManualDecision.erf#/" studioType="Java">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_ORs-UGvbEe2fDcPgRqDxBQ" vocabulary="../../InsuranceSalesProcess.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Vérifier les conditions de refus automatique liées au risque" order="4" ruleActivityUpdateStamp="_okAPoiUdEe2KAbAHgqVpbQ" nextStep="#//@ruleflow/@flowControlList.1" invokes="AutoRefuseBoat.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Vérifier les conditions de refus automatique liées au client" order="5" ruleActivityUpdateStamp="_sms-ICUfEe2KAbAHgqVpbQ" nextStep="#//@ruleflow/@flowControlList.2" invokes="AutoRefuseCustomer.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Vérifier les conditions de refus automatique liées au projet de navigation" order="6" ruleActivityUpdateStamp="_5v43YCUeEe2KAbAHgqVpbQ" nextStep="#//@ruleflow/@flowControlList.3" invokes="AutoRefuseNavigation.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Vérification des conditions de décisions manuelles" order="7" ruleActivityUpdateStamp="_ZA1gETs_Ee2R6ZqEREmj9g" invokes="ManualDecision.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="1" ruleActivityUpdateStamp="_wzuXMWv3Ee2b48ZqKZv1Zg" invokes="#//@ruleflow/@subflowList.0"/>
+    <subflowList name="Legenda">
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="3" ruleActivityUpdateStamp="_w0GxsGv3Ee2b48ZqKZv1Zg" invokes="#//@ruleflow/@subflowList.0/@subflowList.0"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="2" ruleActivityUpdateStamp="_w0GxsGv3Ee2b48ZqKZv1Zg" invokes="#//@ruleflow/@subflowList.0/@subflowList.1"/>
+      <subflowList name="Rulesheet"/>
+      <subflowList name="Ruleflow"/>
+    </subflowList>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="24" y="54" width="523" height="61" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="27" y="150" width="520" height="61" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="30" y="258" width="523" height="61" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" activityNode="#//@ruleflow/@flowControlList.2">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="30" y="366" width="529" height="55" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" activityNode="#//@ruleflow/@flowControlList.3">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="618" y="30" width="360" height="180" activityNode="#//@ruleflow/@flowControlList.4"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="79" y="13" width="184" height="24" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.0">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="79" y="67" width="184" height="27" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.1">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0" targetShape="#//@ruleflowViewList.0/@flowShapeList.1"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.1" targetShape="#//@ruleflowViewList.0/@flowShapeList.2"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.2" targetShape="#//@ruleflowViewList.0/@flowShapeList.3"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

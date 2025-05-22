@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_OLmbNDKUEe2VV_UZ80q-Vg" externalChecksum="7824986:1438690353:643269079">
+  <languageCode>fr_FR</languageCode>
+  <ruleset vocabularyUpdateStamp="_irvtkT8NEe2YDZp9yVLorw" vocabulary="../../InsuranceSalesProcess.ecore#/">
+    <rule>
+      <condition/>
+      <condition/>
+      <condition/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition>
+        <opaqueExpression expression="model.type = modelType#motorboat or model.type = modelType#sailboat">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="model.type = 'motorboat' or model.type = 'sailboat'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="model.type">
+                <parentTerm text="model" datatype="Model" termtype="ENTITY" fulltext="model" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="model.type" rhs="{modelType#motorboat, modelType#sailboat}"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(navigation.transatlantic)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( navigation.transatlantic ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="transatlantic" datatype="Boolean" termtype="ATTRIBUTE" fulltext="navigation.transatlantic">
+                <parentTerm text="navigation" datatype="Navigation" termtype="ENTITY" fulltext="navigation" variable="#//@ruleset/@logicalVariables.0/@extension.3">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="navigation.transatlantic" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="navigation.area = navigationArea#europe">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="navigation.area = 'europe'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="area" datatype="String" termtype="ATTRIBUTE" fulltext="navigation.area">
+                <parentTerm text="navigation" datatype="Navigation" termtype="ENTITY" fulltext="navigation" variable="#//@ruleset/@logicalVariables.0/@extension.3">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="navigation.area" rhs="navigationArea#europe"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="ManualDecision.message +='Transatlantique envisagée.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ManualDecision.message = ManualDecision.message + 'Transatlantique envisagée.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Rating.isManualQuotation = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.isManualQuotation = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="isManualQuotation" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Rating.isManualQuotation">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0 #//@ruleset/@ruleStatements.1">
+      <condition>
+        <opaqueExpression expression="model.type = modelType#motorboat or model.type = modelType#sailboat">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="model.type = 'motorboat' or model.type = 'sailboat'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="model.type">
+                <parentTerm text="model" datatype="Model" termtype="ENTITY" fulltext="model" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="model.type" rhs="{modelType#motorboat, modelType#sailboat}"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(navigation.transatlantic)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( navigation.transatlantic ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="transatlantic" datatype="Boolean" termtype="ATTRIBUTE" fulltext="navigation.transatlantic">
+                <parentTerm text="navigation" datatype="Navigation" termtype="ENTITY" fulltext="navigation" variable="#//@ruleset/@logicalVariables.0/@extension.3">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="navigation.transatlantic" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="not (navigation.area = navigationArea#europe) or navigation.area = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( navigation.area = 'europe' ) or navigation.area = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="area" datatype="String" termtype="ATTRIBUTE" fulltext="navigation.area">
+                <parentTerm text="navigation" datatype="Navigation" termtype="ENTITY" fulltext="navigation" variable="#//@ruleset/@logicalVariables.0/@extension.3">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="navigation.area" rhs="not navigationArea#europe"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="ManualDecision.message +=' Zone de navigation non comprise dans les limites des CGU. '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ManualDecision.message = ManualDecision.message + ' Zone de navigation non comprise dans les limites des CGU. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Rating.isManualQuotation = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.isManualQuotation = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="isManualQuotation" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Rating.isManualQuotation">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="ManualDecision.message +='Transatlantique envisagée.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ManualDecision.message = ManualDecision.message + 'Transatlantique envisagée.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+      <condition>
+        <opaqueExpression expression="model.type = modelType#motorboat or model.type = modelType#sailboat">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="model.type = 'motorboat' or model.type = 'sailboat'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="model.type">
+                <parentTerm text="model" datatype="Model" termtype="ENTITY" fulltext="model" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="model.type" rhs="{modelType#motorboat, modelType#sailboat}"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(navigation.transatlantic)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( navigation.transatlantic ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="transatlantic" datatype="Boolean" termtype="ATTRIBUTE" fulltext="navigation.transatlantic">
+                <parentTerm text="navigation" datatype="Navigation" termtype="ENTITY" fulltext="navigation" variable="#//@ruleset/@logicalVariables.0/@extension.3">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="navigation.transatlantic" rhs="F"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="not (navigation.area = navigationArea#europe) or navigation.area = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( navigation.area = 'europe' ) or navigation.area = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="area" datatype="String" termtype="ATTRIBUTE" fulltext="navigation.area">
+                <parentTerm text="navigation" datatype="Navigation" termtype="ENTITY" fulltext="navigation" variable="#//@ruleset/@logicalVariables.0/@extension.3">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="navigation.area" rhs="not navigationArea#europe"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="ManualDecision.message +=' Zone de navigation non comprise dans les limites des CGU. '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ManualDecision.message = ManualDecision.message + ' Zone de navigation non comprise dans les limites des CGU. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="Rating.isManualQuotation = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.isManualQuotation = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="isManualQuotation" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Rating.isManualQuotation">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1 #//@ruleset/@rules.2" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.5">
+      <text expression="Transatlantique envisagée">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Transatlantique envisagée" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.2 #//@ruleset/@rules.3" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.5">
+      <text expression="Zone de navigation non comprise dans les limites des CGU,">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Zone de navigation non comprise dans les limites des CGU," expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable entity="../../InsuranceSalesProcess.ecore#//Rating">
+      <extension association="true" entity="../../InsuranceSalesProcess.ecore#//Product" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Rating/products">
+        <extension explicit="true" association="true" entity="../../InsuranceSalesProcess.ecore#//Supplier" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Product/suppliers">
+          <alias value="supplier"/>
+        </extension>
+      </extension>
+      <extension explicit="true" association="true" entity="../../InsuranceSalesProcess.ecore#//Risk" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Rating/risk">
+        <alias value="risk"/>
+        <extension explicit="true" association="true" entity="../../InsuranceSalesProcess.ecore#//Harbor" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Risk/harbor">
+          <alias value="harbor"/>
+          <extension association="true" entity="../../InsuranceSalesProcess.ecore#//Country" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Harbor/countryData">
+            <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Country/monitored"/>
+          </extension>
+          <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Harbor/country"/>
+          <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Harbor/area"/>
+          <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Harbor/zipCode"/>
+        </extension>
+        <extension explicit="true" association="true" entity="../../InsuranceSalesProcess.ecore#//Model" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Risk/model">
+          <alias value="model"/>
+          <extension association="true" entity="../../InsuranceSalesProcess.ecore#//Make" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Model/make">
+            <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Make/name"/>
+          </extension>
+          <extension explicit="true" association="true" entity="../../InsuranceSalesProcess.ecore#//Segment" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Model/segment">
+            <alias value="segment"/>
+            <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Segment/code"/>
+            <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Segment/decision"/>
+          </extension>
+          <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Model/name"/>
+          <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Model/type"/>
+          <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Model/decision"/>
+          <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Model/length"/>
+        </extension>
+        <extension explicit="true" association="true" entity="../../InsuranceSalesProcess.ecore#//Engine" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Risk/engines">
+          <alias value="engines"/>
+          <extension association="true" entity="../../InsuranceSalesProcess.ecore#//Make" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Engine/make">
+            <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Make/name"/>
+          </extension>
+          <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Engine/power"/>
+        </extension>
+        <extension association="true" entity="../../InsuranceSalesProcess.ecore#//Country" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Risk/countryData">
+          <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Country/monitored"/>
+          <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Country/UE"/>
+        </extension>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Risk/flag"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Risk/year"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../../InsuranceSalesProcess.ecore#//Customer" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Rating/customer">
+        <alias value="customer"/>
+        <extension association="true" entity="../../InsuranceSalesProcess.ecore#//Country" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Customer/countryData">
+          <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Country/UE"/>
+          <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Country/monitored"/>
+        </extension>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Customer/country"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Customer/numberClaim"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Customer/manualSouscription"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Customer/email"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Customer/area"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Customer/alreadyCustomer"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../../InsuranceSalesProcess.ecore#//Navigation" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Rating/navigation">
+        <alias value="navigation"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Navigation/transatlantic"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Navigation/area"/>
+      </extension>
+      <extension association="true" entity="../../InsuranceSalesProcess.ecore#//Usage" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Rating/usage">
+        <extension association="true" entity="../../InsuranceSalesProcess.ecore#//Uses" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Usage/uses">
+          <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Uses/id"/>
+        </extension>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Usage/usageType"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Usage/frequency"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Usage/withoutSkipper"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Usage/withSkipper"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Usage/inDock"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Usage/rental"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Usage/residence"/>
+      </extension>
+      <extension explicit="true" association="true" entity="../../InsuranceSalesProcess.ecore#//ManualDecision" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Rating/manualDecision" ruleStatements="#//@ruleset/@ruleStatements.0 #//@ruleset/@ruleStatements.1">
+        <alias value="manualDecision"/>
+      </extension>
+      <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Rating/businessProviderEmail"/>
+      <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Rating/isManualQuotation"/>
+    </logicalVariable>
+    <logicalVariable explicit="true" entity="../../InsuranceSalesProcess.ecore#//Rating">
+      <alias value="rating2"/>
+      <extension association="true" entity="../../InsuranceSalesProcess.ecore#//Navigation" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Rating/navigation">
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Navigation/transatlantic"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Navigation/area"/>
+      </extension>
+      <extension association="true" entity="../../InsuranceSalesProcess.ecore#//Usage" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Rating/usage">
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Usage/usageType"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Usage/frequency"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Usage/withoutSkipper"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Usage/withSkipper"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Usage/inDock"/>
+      </extension>
+      <extension association="true" entity="../../InsuranceSalesProcess.ecore#//Risk" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Rating/risk">
+        <extension association="true" entity="../../InsuranceSalesProcess.ecore#//Model" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Risk/model">
+          <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Model/type"/>
+        </extension>
+      </extension>
+    </logicalVariable>
+    <logicalVariable entity="../../InsuranceSalesProcess.ecore#//ManualDecision">
+      <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//ManualDecision/message"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightConditionsActions="46">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="ManualDecision.message +=cellValue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ManualDecision.message = ManualDecision.message + cellValue" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Rating.isManualQuotation">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.isManualQuotation" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="isManualQuotation" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Rating.isManualQuotation">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="ManualDecision.message +=cellValue">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ManualDecision.message = ManualDecision.message + cellValue" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="true">
+            <modifiedTermList>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision" variable="#//@ruleset/@logicalVariables.2"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0/@referencedAttributes.1"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0/@referencedAttributes.2"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0/@extension.0">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.0/@extension.0/@referencedAttributes.0"/>
+              </children>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@referencedAttributes.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1/@extension.0">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1/@extension.0/@referencedAttributes.0"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1/@referencedAttributes.1"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1/@referencedAttributes.2"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1/@extension.1">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1/@extension.1/@referencedAttributes.0"/>
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1/@extension.1/@referencedAttributes.1"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1/@referencedAttributes.3"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.2">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.2/@extension.0">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.2/@extension.0/@referencedAttributes.0"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.2/@referencedAttributes.0"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@referencedAttributes.3"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.3">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.3/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@extension.3/@referencedAttributes.1"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@referencedAttributes.4"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.2">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.2/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@extension.0/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@extension.0/@referencedAttributes.1"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@referencedAttributes.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@referencedAttributes.3"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@referencedAttributes.4"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@referencedAttributes.5"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.3">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.3/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.3/@referencedAttributes.1"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.4">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.4/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.4/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.4/@referencedAttributes.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.4/@referencedAttributes.3"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.4/@referencedAttributes.4"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.4/@referencedAttributes.5"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.4/@referencedAttributes.6"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.4/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.4/@extension.0/@referencedAttributes.0"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.5"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.1"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.1">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.1/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.1/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.1/@referencedAttributes.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.1/@referencedAttributes.3"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.1/@referencedAttributes.4"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.2">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.2/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.2/@extension.0/@referencedAttributes.0"/>
+            </children>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.2">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.2/@referencedAttributes.0"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="35" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="{1, 2}"/>
+        <text external="Transatlantique envisagée">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Transatlantique envisagée" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="{2, 3}"/>
+        <text external="Zone de navigation non comprise dans les limites des CGU,">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Zone de navigation non comprise dans les limites des CGU," expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="18" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="model.type">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="model.type" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="model.type">
+                <parentTerm text="model" datatype="Model" termtype="ENTITY" fulltext="model" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="navigation.transatlantic">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="navigation.transatlantic" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="transatlantic" datatype="Boolean" termtype="ATTRIBUTE" fulltext="navigation.transatlantic">
+                <parentTerm text="navigation" datatype="Navigation" termtype="ENTITY" fulltext="navigation" variable="#//@ruleset/@logicalVariables.0/@extension.3">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="navigation.area">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="navigation.area" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="area" datatype="String" termtype="ATTRIBUTE" fulltext="navigation.area">
+                <parentTerm text="navigation" datatype="Navigation" termtype="ENTITY" fulltext="navigation" variable="#//@ruleset/@logicalVariables.0/@extension.3">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="5">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="{modelType#motorboat, modelType#sailboat}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="model.type = 'motorboat' or model.type = 'sailboat'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="model.type">
+                <parentTerm text="model" datatype="Model" termtype="ENTITY" fulltext="model" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( navigation.transatlantic ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="transatlantic" datatype="Boolean" termtype="ATTRIBUTE" fulltext="navigation.transatlantic">
+                <parentTerm text="navigation" datatype="Navigation" termtype="ENTITY" fulltext="navigation" variable="#//@ruleset/@logicalVariables.0/@extension.3">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="navigationArea#europe">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="navigation.area = 'europe'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="area" datatype="String" termtype="ATTRIBUTE" fulltext="navigation.area">
+                <parentTerm text="navigation" datatype="Navigation" termtype="ENTITY" fulltext="navigation" variable="#//@ruleset/@logicalVariables.0/@extension.3">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="'Transatlantique envisagée.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ManualDecision.message = ManualDecision.message + 'Transatlantique envisagée.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision"/>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.isManualQuotation = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="isManualQuotation" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Rating.isManualQuotation">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="{modelType#motorboat, modelType#sailboat}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="model.type = 'motorboat' or model.type = 'sailboat'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="model.type">
+                <parentTerm text="model" datatype="Model" termtype="ENTITY" fulltext="model" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( navigation.transatlantic ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="transatlantic" datatype="Boolean" termtype="ATTRIBUTE" fulltext="navigation.transatlantic">
+                <parentTerm text="navigation" datatype="Navigation" termtype="ENTITY" fulltext="navigation" variable="#//@ruleset/@logicalVariables.0/@extension.3">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="not navigationArea#europe">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( navigation.area = 'europe' ) or navigation.area = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="area" datatype="String" termtype="ATTRIBUTE" fulltext="navigation.area">
+                <parentTerm text="navigation" datatype="Navigation" termtype="ENTITY" fulltext="navigation" variable="#//@ruleset/@logicalVariables.0/@extension.3">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="' Zone de navigation non comprise dans les limites des CGU. '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ManualDecision.message = ManualDecision.message + ' Zone de navigation non comprise dans les limites des CGU. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision"/>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.isManualQuotation = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="isManualQuotation" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Rating.isManualQuotation">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="'Transatlantique envisagée.'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ManualDecision.message = ManualDecision.message + 'Transatlantique envisagée.'" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision"/>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="120" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="{modelType#motorboat, modelType#sailboat}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="model.type = 'motorboat' or model.type = 'sailboat'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="model.type">
+                <parentTerm text="model" datatype="Model" termtype="ENTITY" fulltext="model" variable="#//@ruleset/@logicalVariables.0/@extension.1/@extension.1">
+                  <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="risk" variable="#//@ruleset/@logicalVariables.0/@extension.1">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( navigation.transatlantic ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="transatlantic" datatype="Boolean" termtype="ATTRIBUTE" fulltext="navigation.transatlantic">
+                <parentTerm text="navigation" datatype="Navigation" termtype="ENTITY" fulltext="navigation" variable="#//@ruleset/@logicalVariables.0/@extension.3">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="not navigationArea#europe">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( navigation.area = 'europe' ) or navigation.area = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="area" datatype="String" termtype="ATTRIBUTE" fulltext="navigation.area">
+                <parentTerm text="navigation" datatype="Navigation" termtype="ENTITY" fulltext="navigation" variable="#//@ruleset/@logicalVariables.0/@extension.3">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="' Zone de navigation non comprise dans les limites des CGU. '">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="ManualDecision.message = ManualDecision.message + ' Zone de navigation non comprise dans les limites des CGU. '" datatype="String" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision"/>
+              <terms text="message" datatype="String" termtype="ATTRIBUTE" fulltext="ManualDecision.message">
+                <parentTerm text="ManualDecision" datatype="ManualDecision" termtype="ENTITY" fulltext="ManualDecision"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+        <actionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.isManualQuotation = T" datatype="Boolean" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="isManualQuotation" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Rating.isManualQuotation">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

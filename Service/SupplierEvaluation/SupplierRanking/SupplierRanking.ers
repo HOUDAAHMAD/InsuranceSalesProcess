@@ -1,0 +1,1492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_1x_02Jc1Ee20mKTWQQQ3gg" externalChecksum="7824986:1438690353:643269079" studioType="Java">
+  <languageCode>fr_FR</languageCode>
+  <comments timestamp="2022-06-20T09:51:56.403+0200" username="loic.eberhart" text="Les fournisseurs ne demandant par de document sont toujours en première place." objects="#//@rulesheetViewList.0/@ruleSection/@ruleColumnList.1" type="Note" ruleSheetSelectionType="Rule" ruleSheetSelectionReference="2,3,1,0,1,46"/>
+  <comments timestamp="2022-06-20T09:52:56.376+0200" username="loic.eberhart" text="Classement des fournisseurs demandant une auto-évaluation (fonction de l'existance de  fournisseur à Néant ou pas)" objects="#//@rulesheetViewList.0/@ruleSection/@ruleColumnList.2 #//@rulesheetViewList.0/@ruleSection/@ruleColumnList.3" type="Note" ruleSheetSelectionType="Rule" ruleSheetSelectionReference="2,3,2,0,3,46"/>
+  <comments timestamp="2022-06-20T09:53:33.995+0200" username="loic.eberhart" text="Classement des fournisseurs demandant une expertise(fonction de l'existance de  fournisseur à Néant/Auto-évaluation ou pas)" objects="#//@rulesheetViewList.0/@ruleSection/@ruleColumnList.4 #//@rulesheetViewList.0/@ruleSection/@ruleColumnList.5 #//@rulesheetViewList.0/@ruleSection/@ruleColumnList.6 #//@rulesheetViewList.0/@ruleSection/@ruleColumnList.7" type="Note" ruleSheetSelectionType="Rule" ruleSheetSelectionReference="2,3,4,0,7,46"/>
+  <ruleset vocabularyUpdateStamp="_s9SogZc2Ee20mKTWQQQ3gg" vocabulary="../../../InsuranceSalesProcess.ecore#/">
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition/>
+      <condition/>
+      <condition/>
+      <condition/>
+      <action/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(supplier->exists(evaluationDocument='Néant'))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( supplier ->exists( supplier.evaluationDocument = 'Néant' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="supplier" datatype="Boolean" termtype="COLLECTION" fulltext="supplier->notEmpty">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="supplier->exists(evaluationDocument='Néant')" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="supplier.evaluationDocument = 'Néant'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.evaluationDocument = 'Néant'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="supplier.evaluationDocument" rhs="'Néant'"/>
+      </condition>
+      <condition/>
+      <condition/>
+      <action>
+        <opaqueExpression expression="supplier.rank = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.rank = 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rank" datatype="Integer" termtype="ATTRIBUTE" fulltext="supplier.rank">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(supplier->exists(evaluationDocument='Néant'))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( supplier ->exists( supplier.evaluationDocument = 'Néant' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="supplier" datatype="Boolean" termtype="COLLECTION" fulltext="supplier->notEmpty">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="supplier->exists(evaluationDocument='Néant')" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="supplier.evaluationDocument = 'Auto-Evaluation'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.evaluationDocument = 'Auto-Evaluation'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="supplier.evaluationDocument" rhs="'Auto-Evaluation'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(AutoEvaluation->exists(evaluationDocument='Auto-Evaluation'))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( AutoEvaluation ->exists( AutoEvaluation.evaluationDocument = 'Auto-Evaluation' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="AutoEvaluation" datatype="Boolean" termtype="COLLECTION" fulltext="AutoEvaluation->notEmpty">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="AutoEvaluation.evaluationDocument">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="AutoEvaluation->exists(evaluationDocument='Auto-Evaluation')" rhs="T"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="supplier.rank = 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.rank = 2" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rank" datatype="Integer" termtype="ATTRIBUTE" fulltext="supplier.rank">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(supplier->exists(evaluationDocument='Néant'))=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( supplier ->exists( supplier.evaluationDocument = 'Néant' ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="supplier" datatype="Boolean" termtype="COLLECTION" fulltext="supplier->notEmpty">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="supplier->exists(evaluationDocument='Néant')" rhs="F"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="supplier.evaluationDocument = 'Auto-Evaluation'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.evaluationDocument = 'Auto-Evaluation'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="supplier.evaluationDocument" rhs="'Auto-Evaluation'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(AutoEvaluation->exists(evaluationDocument='Auto-Evaluation'))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( AutoEvaluation ->exists( AutoEvaluation.evaluationDocument = 'Auto-Evaluation' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="AutoEvaluation" datatype="Boolean" termtype="COLLECTION" fulltext="AutoEvaluation->notEmpty">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="AutoEvaluation.evaluationDocument">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="AutoEvaluation->exists(evaluationDocument='Auto-Evaluation')" rhs="T"/>
+      </condition>
+      <condition/>
+      <action>
+        <opaqueExpression expression="supplier.rank = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.rank = 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rank" datatype="Integer" termtype="ATTRIBUTE" fulltext="supplier.rank">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(supplier->exists(evaluationDocument='Néant'))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( supplier ->exists( supplier.evaluationDocument = 'Néant' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="supplier" datatype="Boolean" termtype="COLLECTION" fulltext="supplier->notEmpty">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="supplier->exists(evaluationDocument='Néant')" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="supplier.evaluationDocument = 'Expertise'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.evaluationDocument = 'Expertise'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="supplier.evaluationDocument" rhs="'Expertise'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(AutoEvaluation->exists(evaluationDocument='Auto-Evaluation'))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( AutoEvaluation ->exists( AutoEvaluation.evaluationDocument = 'Auto-Evaluation' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="AutoEvaluation" datatype="Boolean" termtype="COLLECTION" fulltext="AutoEvaluation->notEmpty">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="AutoEvaluation.evaluationDocument">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="AutoEvaluation->exists(evaluationDocument='Auto-Evaluation')" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(Expertise->exists(evaluationDocument='Expertise'))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Expertise ->exists( Expertise.evaluationDocument = 'Expertise' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Expertise" datatype="Boolean" termtype="COLLECTION" fulltext="Expertise->notEmpty">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="Expertise.evaluationDocument">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Expertise->exists(evaluationDocument='Expertise')" rhs="T"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="supplier.rank = 3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.rank = 3" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rank" datatype="Integer" termtype="ATTRIBUTE" fulltext="supplier.rank">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(supplier->exists(evaluationDocument='Néant'))=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( supplier ->exists( supplier.evaluationDocument = 'Néant' ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="supplier" datatype="Boolean" termtype="COLLECTION" fulltext="supplier->notEmpty">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="supplier->exists(evaluationDocument='Néant')" rhs="F"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="supplier.evaluationDocument = 'Expertise'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.evaluationDocument = 'Expertise'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="supplier.evaluationDocument" rhs="'Expertise'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(AutoEvaluation->exists(evaluationDocument='Auto-Evaluation'))=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( AutoEvaluation ->exists( AutoEvaluation.evaluationDocument = 'Auto-Evaluation' ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="AutoEvaluation" datatype="Boolean" termtype="COLLECTION" fulltext="AutoEvaluation->notEmpty">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="AutoEvaluation.evaluationDocument">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="AutoEvaluation->exists(evaluationDocument='Auto-Evaluation')" rhs="F"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(Expertise->exists(evaluationDocument='Expertise'))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Expertise ->exists( Expertise.evaluationDocument = 'Expertise' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Expertise" datatype="Boolean" termtype="COLLECTION" fulltext="Expertise->notEmpty">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="Expertise.evaluationDocument">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Expertise->exists(evaluationDocument='Expertise')" rhs="T"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="supplier.rank = 1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.rank = 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rank" datatype="Integer" termtype="ATTRIBUTE" fulltext="supplier.rank">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(supplier->exists(evaluationDocument='Néant'))=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( supplier ->exists( supplier.evaluationDocument = 'Néant' ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="supplier" datatype="Boolean" termtype="COLLECTION" fulltext="supplier->notEmpty">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="supplier->exists(evaluationDocument='Néant')" rhs="F"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="supplier.evaluationDocument = 'Expertise'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.evaluationDocument = 'Expertise'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="supplier.evaluationDocument" rhs="'Expertise'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(AutoEvaluation->exists(evaluationDocument='Auto-Evaluation'))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( AutoEvaluation ->exists( AutoEvaluation.evaluationDocument = 'Auto-Evaluation' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="AutoEvaluation" datatype="Boolean" termtype="COLLECTION" fulltext="AutoEvaluation->notEmpty">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="AutoEvaluation.evaluationDocument">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="AutoEvaluation->exists(evaluationDocument='Auto-Evaluation')" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(Expertise->exists(evaluationDocument='Expertise'))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Expertise ->exists( Expertise.evaluationDocument = 'Expertise' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Expertise" datatype="Boolean" termtype="COLLECTION" fulltext="Expertise->notEmpty">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="Expertise.evaluationDocument">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Expertise->exists(evaluationDocument='Expertise')" rhs="T"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="supplier.rank = 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.rank = 2" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rank" datatype="Integer" termtype="ATTRIBUTE" fulltext="supplier.rank">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(supplier->exists(evaluationDocument='Néant'))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( supplier ->exists( supplier.evaluationDocument = 'Néant' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="supplier" datatype="Boolean" termtype="COLLECTION" fulltext="supplier->notEmpty">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="supplier->exists(evaluationDocument='Néant')" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="supplier.evaluationDocument = 'Expertise'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.evaluationDocument = 'Expertise'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="supplier.evaluationDocument" rhs="'Expertise'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(AutoEvaluation->exists(evaluationDocument='Auto-Evaluation'))=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( AutoEvaluation ->exists( AutoEvaluation.evaluationDocument = 'Auto-Evaluation' ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="AutoEvaluation" datatype="Boolean" termtype="COLLECTION" fulltext="AutoEvaluation->notEmpty">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="AutoEvaluation.evaluationDocument">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="AutoEvaluation->exists(evaluationDocument='Auto-Evaluation')" rhs="F"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(Expertise->exists(evaluationDocument='Expertise'))=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Expertise ->exists( Expertise.evaluationDocument = 'Expertise' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Expertise" datatype="Boolean" termtype="COLLECTION" fulltext="Expertise->notEmpty">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="Expertise.evaluationDocument">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Expertise->exists(evaluationDocument='Expertise')" rhs="T"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="supplier.rank = 2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.rank = 2" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rank" datatype="Integer" termtype="ATTRIBUTE" fulltext="supplier.rank">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0 #//@ruleset/@logicalVariables.0/@extension.0">
+      <opaqueExpression expression="Rating.products.productId in {civilLiability, jetCivilLiability, littoral, horizon, jetMultirisk }">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.products.productId in { 'civilLiability' , 'jetCivilLiability' , 'littoral' , 'horizon' , 'jetMultirisk' }" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <referencedTermList>
+            <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="Rating.products.productId">
+              <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+      <text expression="Priorisation des fournisseurs selon les documents d'évaluation demandés">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Priorisation des fournisseurs selon les documents d'évaluation demandés" expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable entity="../../../InsuranceSalesProcess.ecore#//Rating" filters="#//@ruleset/@filters.0">
+      <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Product" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Rating/products" ruleStatements="#//@ruleset/@ruleStatements.0" filters="#//@ruleset/@filters.0">
+        <extension explicit="true" association="true" entity="../../../InsuranceSalesProcess.ecore#//Supplier" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Product/suppliers">
+          <alias value="supplier"/>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Supplier/evaluationDocument"/>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Supplier/rank"/>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Supplier/name"/>
+        </extension>
+        <extension explicit="true" association="true" entity="../../../InsuranceSalesProcess.ecore#//Supplier" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Product/suppliers">
+          <alias value="Néant"/>
+        </extension>
+        <extension explicit="true" association="true" entity="../../../InsuranceSalesProcess.ecore#//Supplier" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Product/suppliers">
+          <alias value="Expertise"/>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Supplier/evaluationDocument"/>
+        </extension>
+        <extension explicit="true" association="true" entity="../../../InsuranceSalesProcess.ecore#//Supplier" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Product/suppliers">
+          <alias value="AutoEvaluation"/>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Supplier/evaluationDocument"/>
+        </extension>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Product/productId"/>
+      </extension>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="29" sashWeightConditionsIf="54">
+    <actionSection rowCount="49" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="supplier.rank">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.rank" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="rank" datatype="Integer" termtype="ATTRIBUTE" fulltext="supplier.rank">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="Rating.products.productId in {civilLiability, jetCivilLiability, littoral, horizon, jetMultirisk }" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="Rating.products.productId in {civilLiability, jetCivilLiability, littoral, horizon, jetMultirisk }" filter="#//@ruleset/@filters.0"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.1"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.2"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2/@referencedAttributes.0"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3/@referencedAttributes.0"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
+          </children>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="Rating.products.productId in {civilLiability, jetCivilLiability, littoral, horizon, jetMultirisk }">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.products.productId in { 'civilLiability' , 'jetCivilLiability' , 'littoral' , 'horizon' , 'jetMultirisk' }" datatype="Boolean" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="Rating.products.productId">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="0"/>
+        <text external="Priorisation des fournisseurs selon les documents d'évaluation demandés">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Priorisation des fournisseurs selon les documents d'évaluation demandés" expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="45" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="supplier->exists(evaluationDocument='Néant')">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier ->exists( supplier.evaluationDocument = 'Néant' )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="supplier" datatype="Boolean" termtype="COLLECTION" fulltext="supplier->notEmpty">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="supplier.evaluationDocument">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.evaluationDocument" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList rowHeight="33">
+        <valueSetCell/>
+        <expressionCell external="AutoEvaluation->exists(evaluationDocument='Auto-Evaluation')">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="AutoEvaluation ->exists( AutoEvaluation.evaluationDocument = 'Auto-Evaluation' )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="AutoEvaluation" datatype="Boolean" termtype="COLLECTION" fulltext="AutoEvaluation->notEmpty">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="AutoEvaluation.evaluationDocument">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Expertise->exists(evaluationDocument='Expertise')">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Expertise ->exists( Expertise.evaluationDocument = 'Expertise' )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Expertise" datatype="Boolean" termtype="COLLECTION" fulltext="Expertise->notEmpty">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="Expertise.evaluationDocument">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <overrideValueSetCell valueSet=""/>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( supplier ->exists( supplier.evaluationDocument = 'Néant' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="supplier" datatype="Boolean" termtype="COLLECTION" fulltext="supplier->notEmpty">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'Néant'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.evaluationDocument = 'Néant'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.rank = 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rank" datatype="Integer" termtype="ATTRIBUTE" fulltext="supplier.rank">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( supplier ->exists( supplier.evaluationDocument = 'Néant' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="supplier" datatype="Boolean" termtype="COLLECTION" fulltext="supplier->notEmpty">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'Auto-Evaluation'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.evaluationDocument = 'Auto-Evaluation'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( AutoEvaluation ->exists( AutoEvaluation.evaluationDocument = 'Auto-Evaluation' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="AutoEvaluation" datatype="Boolean" termtype="COLLECTION" fulltext="AutoEvaluation->notEmpty">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="AutoEvaluation.evaluationDocument">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.rank = 2" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rank" datatype="Integer" termtype="ATTRIBUTE" fulltext="supplier.rank">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( supplier ->exists( supplier.evaluationDocument = 'Néant' ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="supplier" datatype="Boolean" termtype="COLLECTION" fulltext="supplier->notEmpty">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'Auto-Evaluation'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.evaluationDocument = 'Auto-Evaluation'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( AutoEvaluation ->exists( AutoEvaluation.evaluationDocument = 'Auto-Evaluation' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="AutoEvaluation" datatype="Boolean" termtype="COLLECTION" fulltext="AutoEvaluation->notEmpty">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="AutoEvaluation.evaluationDocument">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="-"/>
+        <actionValueSetCellList valueSet="1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.rank = 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rank" datatype="Integer" termtype="ATTRIBUTE" fulltext="supplier.rank">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <overrideValueSetCell valueSet=""/>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( supplier ->exists( supplier.evaluationDocument = 'Néant' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="supplier" datatype="Boolean" termtype="COLLECTION" fulltext="supplier->notEmpty">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'Expertise'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.evaluationDocument = 'Expertise'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( AutoEvaluation ->exists( AutoEvaluation.evaluationDocument = 'Auto-Evaluation' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="AutoEvaluation" datatype="Boolean" termtype="COLLECTION" fulltext="AutoEvaluation->notEmpty">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="AutoEvaluation.evaluationDocument">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Expertise ->exists( Expertise.evaluationDocument = 'Expertise' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Expertise" datatype="Boolean" termtype="COLLECTION" fulltext="Expertise->notEmpty">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="Expertise.evaluationDocument">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="3">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.rank = 3" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rank" datatype="Integer" termtype="ATTRIBUTE" fulltext="supplier.rank">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( supplier ->exists( supplier.evaluationDocument = 'Néant' ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="supplier" datatype="Boolean" termtype="COLLECTION" fulltext="supplier->notEmpty">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'Expertise'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.evaluationDocument = 'Expertise'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( AutoEvaluation ->exists( AutoEvaluation.evaluationDocument = 'Auto-Evaluation' ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="AutoEvaluation" datatype="Boolean" termtype="COLLECTION" fulltext="AutoEvaluation->notEmpty">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="AutoEvaluation.evaluationDocument">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Expertise ->exists( Expertise.evaluationDocument = 'Expertise' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Expertise" datatype="Boolean" termtype="COLLECTION" fulltext="Expertise->notEmpty">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="Expertise.evaluationDocument">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.rank = 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rank" datatype="Integer" termtype="ATTRIBUTE" fulltext="supplier.rank">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( supplier ->exists( supplier.evaluationDocument = 'Néant' ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="supplier" datatype="Boolean" termtype="COLLECTION" fulltext="supplier->notEmpty">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'Expertise'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.evaluationDocument = 'Expertise'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( AutoEvaluation ->exists( AutoEvaluation.evaluationDocument = 'Auto-Evaluation' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="AutoEvaluation" datatype="Boolean" termtype="COLLECTION" fulltext="AutoEvaluation->notEmpty">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="AutoEvaluation.evaluationDocument">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Expertise ->exists( Expertise.evaluationDocument = 'Expertise' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Expertise" datatype="Boolean" termtype="COLLECTION" fulltext="Expertise->notEmpty">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="Expertise.evaluationDocument">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.rank = 2" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rank" datatype="Integer" termtype="ATTRIBUTE" fulltext="supplier.rank">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( supplier ->exists( supplier.evaluationDocument = 'Néant' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="supplier" datatype="Boolean" termtype="COLLECTION" fulltext="supplier->notEmpty">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="'Expertise'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.evaluationDocument = 'Expertise'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="supplier.evaluationDocument">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( AutoEvaluation ->exists( AutoEvaluation.evaluationDocument = 'Auto-Evaluation' ) ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="AutoEvaluation" datatype="Boolean" termtype="COLLECTION" fulltext="AutoEvaluation->notEmpty">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="AutoEvaluation.evaluationDocument">
+                <parentTerm text="AutoEvaluation" datatype="Supplier" termtype="ENTITY" fulltext="AutoEvaluation" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.3">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( Expertise ->exists( Expertise.evaluationDocument = 'Expertise' ) ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="Expertise" datatype="Boolean" termtype="COLLECTION" fulltext="Expertise->notEmpty">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="Expertise.evaluationDocument">
+                <parentTerm text="Expertise" datatype="Supplier" termtype="ENTITY" fulltext="Expertise" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="2">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="supplier.rank = 2" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="rank" datatype="Integer" termtype="ATTRIBUTE" fulltext="supplier.rank">
+                <parentTerm text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="supplier" datatype="Supplier" termtype="ENTITY" fulltext="supplier">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </actionValueSetCellList>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

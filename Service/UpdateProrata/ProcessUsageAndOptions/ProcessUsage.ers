@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_x-RjAZceEe2Po7xljc_aDw" externalChecksum="7824986:1438690353:643269079">
+  <languageCode>en</languageCode>
+  <ruleset vocabularyUpdateStamp="_5OpcwZaDEe2-jJtBVn8wag" vocabulary="../../../InsuranceSalesProcess.ecore#/">
+    <rule>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="products.usageCoverages.premium.monthly =(products.usageCoverages.premium.yearly / 12).round(2)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.usageCoverages.premium.monthly = ( products.usageCoverages.premium.yearly / 12 ).round ( 2 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premium.monthly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="products.usageCoverages.premiumTaxOnly.monthly = (products.usageCoverages.premiumTaxOnly.yearly/12).round(2)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.usageCoverages.premiumTaxOnly.monthly = ( products.usageCoverages.premiumTaxOnly.yearly / 12 ).round ( 2 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumTaxOnly.monthly">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.1">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.1">
+                <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumTaxOnly.yearly">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.1">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="products.usageCoverages.premiumWithTax.monthly =(products.usageCoverages.premium.monthly + products.usageCoverages.premiumTaxOnly.monthly).round(2)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.usageCoverages.premiumWithTax.monthly = ( products.usageCoverages.premium.monthly + products.usageCoverages.premiumTaxOnly.monthly ).round ( 2 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumWithTax.monthly">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumWithTax" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.2">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumTaxOnly.monthly">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.1">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premium.monthly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumWithTax" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.2">
+                <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+        <opaqueExpression expression="products.usageCoverages.premium.period =(products.usageCoverages.premium.yearly * products.periodProrata).round(2)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.usageCoverages.premium.period = ( products.usageCoverages.premium.yearly * products.periodProrata ).round ( 2 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premium.period">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+        <opaqueExpression expression="products.usageCoverages.premiumTaxOnly.period =(products.usageCoverages.premiumTaxOnly.yearly * products.periodProrata).round(2)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.usageCoverages.premiumTaxOnly.period = ( products.usageCoverages.premiumTaxOnly.yearly * products.periodProrata ).round ( 2 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumTaxOnly.period">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.1">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.1">
+                <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumTaxOnly.yearly">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.1">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+        <opaqueExpression expression="products.usageCoverages.premiumWithTax.period =(products.usageCoverages.premium.period+ products.usageCoverages.premiumTaxOnly.period).round(2)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.usageCoverages.premiumWithTax.period = ( products.usageCoverages.premium.period + products.usageCoverages.premiumTaxOnly.period ).round ( 2 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumWithTax.period">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumWithTax" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.2">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumTaxOnly.period">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.1">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premium.period">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumWithTax" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.2">
+                <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages" variable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.0 #//@ruleset/@rules.0/@actions.1 #//@ruleset/@rules.0/@actions.2" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+      <text expression="Calcule de monthly.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Calcule de monthly." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.4 #//@ruleset/@rules.0/@actions.5 #//@ruleset/@rules.0/@actions.6" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+      <text expression="Calcule du période.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Calcule du période." expressiontype="BRSTATEMENT">
+          <referencedTermList/>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable entity="../../../InsuranceSalesProcess.ecore#//Amount">
+      <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Amount/period"/>
+      <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Amount/monthly"/>
+      <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+    </logicalVariable>
+    <logicalVariable entity="../../../InsuranceSalesProcess.ecore#//Rating">
+      <extension explicit="true" association="true" entity="../../../InsuranceSalesProcess.ecore#//Product" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Rating/products">
+        <alias value="products"/>
+        <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Coverage" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Product/usageCoverages" ruleStatements="#//@ruleset/@ruleStatements.0 #//@ruleset/@ruleStatements.1">
+          <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Amount" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Coverage/premium">
+            <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+            <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Amount/monthly"/>
+            <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Amount/period"/>
+          </extension>
+          <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Amount" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Coverage/premiumTaxOnly">
+            <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+            <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Amount/monthly"/>
+            <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Amount/period"/>
+          </extension>
+          <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Amount" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Coverage/premiumWithTax">
+            <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+            <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Amount/monthly"/>
+            <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Amount/period"/>
+          </extension>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Coverage/coverageId"/>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Coverage/taxPercent"/>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Coverage/type"/>
+        </extension>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Product/periodProrata"/>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Product/taxPercent"/>
+      </extension>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightConditionsIf="64">
+    <actionSection rowCount="50" scrollRowTop="3" columnWidthFactor="0.9464285714285714">
+      <actionItemList rowHeight="65">
+        <valueSetCell valueSet=""/>
+        <expressionCell external="products.usageCoverages.premium.monthly =(products.usageCoverages.premium.yearly / 12).round(2)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.usageCoverages.premium.monthly = ( products.usageCoverages.premium.yearly / 12 ).round ( 2 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premium.monthly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium">
+                <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="69">
+        <valueSetCell valueSet=""/>
+        <expressionCell external="products.usageCoverages.premiumTaxOnly.monthly = (products.usageCoverages.premiumTaxOnly.yearly/12).round(2)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.usageCoverages.premiumTaxOnly.monthly = ( products.usageCoverages.premiumTaxOnly.yearly / 12 ).round ( 2 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumTaxOnly.monthly">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly">
+                <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumTaxOnly.yearly">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="74">
+        <valueSetCell valueSet=""/>
+        <expressionCell external="products.usageCoverages.premiumWithTax.monthly =(products.usageCoverages.premium.monthly + products.usageCoverages.premiumTaxOnly.monthly).round(2)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.usageCoverages.premiumWithTax.monthly = ( products.usageCoverages.premium.monthly + products.usageCoverages.premiumTaxOnly.monthly ).round ( 2 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumWithTax.monthly">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumWithTax">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumTaxOnly.monthly">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premium.monthly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumWithTax">
+                <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="52">
+        <valueSetCell/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList rowHeight="68">
+        <valueSetCell/>
+        <expressionCell external="products.usageCoverages.premium.period =(products.usageCoverages.premium.yearly * products.periodProrata).round(2)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.usageCoverages.premium.period = ( products.usageCoverages.premium.yearly * products.periodProrata ).round ( 2 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premium.period">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium">
+                <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premium.yearly">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="85">
+        <valueSetCell valueSet=""/>
+        <expressionCell external="products.usageCoverages.premiumTaxOnly.period =(products.usageCoverages.premiumTaxOnly.yearly * products.periodProrata).round(2)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.usageCoverages.premiumTaxOnly.period = ( products.usageCoverages.premiumTaxOnly.yearly * products.periodProrata ).round ( 2 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumTaxOnly.period">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly">
+                <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                </parentTerm>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumTaxOnly.yearly">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="69">
+        <valueSetCell/>
+        <expressionCell external="products.usageCoverages.premiumWithTax.period =(products.usageCoverages.premium.period+ products.usageCoverages.premiumTaxOnly.period).round(2)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.usageCoverages.premiumWithTax.period = ( products.usageCoverages.premium.period + products.usageCoverages.premiumTaxOnly.period ).round ( 2 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumWithTax.period">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumWithTax">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premiumTaxOnly.period">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumTaxOnly">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.usageCoverages.premium.period">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premium">
+                  <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                    <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                      <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                    </parentTerm>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="products.usageCoverages.premiumWithTax">
+                <parentTerm text="usageCoverages" datatype="Coverage" termtype="ENTITY" fulltext="products.usageCoverages">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.1/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.1"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.2"/>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@referencedAttributes.0"/>
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@referencedAttributes.1"/>
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.0/@referencedAttributes.2"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.1">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.1/@referencedAttributes.0"/>
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.1/@referencedAttributes.1"/>
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.1/@referencedAttributes.2"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.2">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.2/@referencedAttributes.0"/>
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.2/@referencedAttributes.1"/>
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@extension.2/@referencedAttributes.2"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@referencedAttributes.1"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@extension.0/@referencedAttributes.2"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@extension.0/@referencedAttributes.1"/>
+          </children>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="49"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="207" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="A0:C0"/>
+        <text external="Calcule de monthly.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Calcule de monthly." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="E0:G0"/>
+        <text external="Calcule du période.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Calcule du période." expressiontype="BRSTATEMENT">
+            <referencedTermList/>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="49" columnWidthFactor="0.5"/>
+    <ruleSection columnCount="19">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

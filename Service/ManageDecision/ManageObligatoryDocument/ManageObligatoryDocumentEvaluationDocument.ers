@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_DrRF0T8SEe2YDZp9yVLorw" externalChecksum="7824986:1438690353:643269079" studioType="Java">
+  <languageCode>fr_FR</languageCode>
+  <ruleset vocabularyUpdateStamp="_irvtkT8NEe2YDZp9yVLorw" vocabulary="../../../InsuranceSalesProcess.ecore#/">
+    <rule>
+      <condition/>
+      <condition/>
+      <action/>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition>
+        <opaqueExpression expression="product.suppliers.evaluationDocument = 'Auto-Evaluation'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.suppliers.evaluationDocument = 'Auto-Evaluation'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="product.suppliers.evaluationDocument">
+                <parentTerm text="suppliers" datatype="Supplier" termtype="ENTITY" fulltext="product.suppliers" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="product" datatype="Product" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.suppliers.evaluationDocument" rhs="'Auto-Evaluation'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="product.productId = productId#civilLiability or product.productId = productId#littoral or product.productId = productId#horizon">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.productId = 'civilLiability' or product.productId = 'littoral' or product.productId = 'horizon'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="product.productId">
+                <parentTerm text="product" datatype="Product" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.productId" rhs="{productId#civilLiability, productId#littoral, productId#horizon}"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="Rating.products.documents += Documents.newUnique[labelIT='selfAssesment', name='Demande d\'auto-évaluation', timing='BeforeSubscription', productId=Rating.products.productId]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.products.documents += Documents.newUnique [ productId = Rating.products.productId , Documents.timing = 'BeforeSubscription' , Documents.name = 'Demande d\'auto-évaluation' , Documents.labelIT = 'selfAssesment' ]" datatype="Documents" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="documents" datatype="Documents" termtype="ENTITY" fulltext="Rating.products.documents" variable="#//@ruleset/@logicalVariables.0/@extension.5/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.5">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="Documents" termtype="NEW" fulltext="Documents.new">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.name">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="Rating.products.productId">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.5">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.productId">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="labelIT" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.labelIT">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.5">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="timing" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.timing">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+      <condition>
+        <opaqueExpression expression="product.suppliers.evaluationDocument = 'Expertise'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.suppliers.evaluationDocument = 'Expertise'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="product.suppliers.evaluationDocument">
+                <parentTerm text="suppliers" datatype="Supplier" termtype="ENTITY" fulltext="product.suppliers" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="product" datatype="Product" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.suppliers.evaluationDocument" rhs="'Expertise'"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="product.productId = productId#civilLiability or product.productId = productId#littoral or product.productId = productId#horizon">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.productId = 'civilLiability' or product.productId = 'littoral' or product.productId = 'horizon'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="product.productId">
+                <parentTerm text="product" datatype="Product" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="product.productId" rhs="{productId#civilLiability, productId#littoral, productId#horizon}"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="Rating.products.documents += Documents.newUnique[labelIT='expertReport', name='Demande de rapport d\'expertise', timing='BeforeSubscription', productId=Rating.products.productId]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.products.documents += Documents.newUnique [ productId = Rating.products.productId , Documents.timing = 'BeforeSubscription' , Documents.name = 'Demande de rapport d\'expertise' , Documents.labelIT = 'expertReport' ]" datatype="Documents" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="documents" datatype="Documents" termtype="ENTITY" fulltext="Rating.products.documents" variable="#//@ruleset/@logicalVariables.0/@extension.5/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.5">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="Documents" termtype="NEW" fulltext="Documents.new">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.name">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="Rating.products.productId">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.5">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.productId">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="labelIT" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.labelIT">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.5">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="timing" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.timing">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter logicalVariables="#//@ruleset/@logicalVariables.0 #//@ruleset/@logicalVariables.0/@extension.5">
+      <opaqueExpression expression="Rating.products.eligible = T">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.products.eligible = T" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="eligible" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Rating.products.eligible">
+              <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.5">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1 #//@ruleset/@rules.2" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="{product.suppliers.name} demande {product.suppliers.evaluationDocument}">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product_suppliers.name +  demande  + product_suppliers.evaluationDocument" expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="product.suppliers.evaluationDocument">
+              <parentTerm text="suppliers" datatype="Supplier" termtype="ENTITY" fulltext="product.suppliers" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="product" datatype="Product" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </parentTerm>
+            </terms>
+            <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="product.suppliers.name">
+              <parentTerm text="suppliers" datatype="Supplier" termtype="ENTITY" fulltext="product.suppliers" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="product" datatype="Product" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable entity="../../../InsuranceSalesProcess.ecore#//Rating" ruleStatements="#//@ruleset/@ruleStatements.0" filters="#//@ruleset/@filters.0">
+      <extension explicit="true" association="true" entity="../../../InsuranceSalesProcess.ecore#//Product" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Rating/products">
+        <alias value="product"/>
+        <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Supplier" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Product/suppliers">
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Supplier/evaluationDocument"/>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Supplier/name"/>
+        </extension>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Product/productId"/>
+      </extension>
+      <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Navigation" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Rating/navigation">
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Navigation/area"/>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Navigation/region"/>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Navigation/transatlantic"/>
+      </extension>
+      <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Risk" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Rating/risk">
+        <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Model" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Risk/model">
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Model/type"/>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Model/name"/>
+        </extension>
+        <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Harbor" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Risk/harbor">
+          <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Country" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Harbor/countryData">
+            <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Country/monitored"/>
+            <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Country/highRisk"/>
+          </extension>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Harbor/country"/>
+        </extension>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Risk/value"/>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Risk/flag"/>
+      </extension>
+      <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Customer" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Rating/customer">
+        <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Country" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Customer/countryData">
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Country/UE"/>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Country/monitored"/>
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Country/highRisk"/>
+        </extension>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Customer/country"/>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Customer/numberClaim"/>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Customer/type"/>
+      </extension>
+      <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Usage" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Rating/usage">
+        <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Uses" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Usage/uses">
+          <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Uses/id"/>
+        </extension>
+      </extension>
+      <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Product" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Rating/products" filters="#//@ruleset/@filters.0">
+        <extension association="true" entity="../../../InsuranceSalesProcess.ecore#//Documents" traversedAssocRole="../../../InsuranceSalesProcess.ecore#//Product/documents"/>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+        <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Product/productId"/>
+      </extension>
+    </logicalVariable>
+    <logicalVariable entity="../../../InsuranceSalesProcess.ecore#//Documents">
+      <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Documents/name"/>
+      <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Documents/timing"/>
+      <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Documents/productId"/>
+      <referencedAttributes attribute="../../../InsuranceSalesProcess.ecore#//Documents/labelIT"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightConditionsActions="48" sashWeightConditionsIf="75">
+    <actionSection rowCount="32" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="Rating.products.documents += Documents.newUnique[labelIT='selfAssesment', name='Demande d\'auto-évaluation', timing='BeforeSubscription', productId=Rating.products.productId]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.products.documents += Documents.newUnique [ productId = Rating.products.productId , Documents.timing = 'BeforeSubscription' , Documents.name = 'Demande d\'auto-évaluation' , Documents.labelIT = 'selfAssesment' ]" datatype="Documents" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="documents" datatype="Documents" termtype="ENTITY" fulltext="Rating.products.documents">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="Documents" termtype="NEW" fulltext="Documents.new">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.name">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="Rating.products.productId">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.productId">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="labelIT" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.labelIT">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="timing" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.timing">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Rating.products.documents += Documents.newUnique[labelIT='expertReport', name='Demande de rapport d\'expertise', timing='BeforeSubscription', productId=Rating.products.productId]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.products.documents += Documents.newUnique [ productId = Rating.products.productId , Documents.timing = 'BeforeSubscription' , Documents.name = 'Demande de rapport d\'expertise' , Documents.labelIT = 'expertReport' ]" datatype="Documents" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="documents" datatype="Documents" termtype="ENTITY" fulltext="Rating.products.documents">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="new" datatype="Documents" termtype="NEW" fulltext="Documents.new">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.name">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="Rating.products.productId">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.productId">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="labelIT" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.labelIT">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="timing" datatype="String" termtype="ATTRIBUTE" fulltext="Documents.timing">
+                <parentTerm text="Documents" datatype="Documents" termtype="ENTITY" fulltext="Documents" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="Rating.products.eligible = T" filter="#//@ruleset/@filters.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0/@referencedAttributes.1"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.1">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.1/@referencedAttributes.2"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.2">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.2/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@extension.0/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@extension.0/@referencedAttributes.1"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.2/@extension.1">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@extension.1/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.2/@extension.1/@extension.0">
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@extension.1/@extension.0/@referencedAttributes.0"/>
+                <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.2/@extension.1/@extension.0/@referencedAttributes.1"/>
+              </children>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.3">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.3/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.3/@extension.0/@referencedAttributes.0"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.3/@extension.0/@referencedAttributes.1"/>
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.3/@extension.0/@referencedAttributes.2"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.3/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.3/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.3/@referencedAttributes.2"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.4">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.4/@extension.0">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.4/@extension.0/@referencedAttributes.0"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.5">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+              <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="Rating.products.eligible = T" filter="#//@ruleset/@filters.0"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.5/@extension.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.5/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.5/@referencedAttributes.1"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.2"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.3"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="Rating.products.eligible = T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.products.eligible = T" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="eligible" datatype="Boolean" termtype="ATTRIBUTE" fulltext="Rating.products.eligible">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="39" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="1:2"/>
+        <text external="{product.suppliers.name} demande {product.suppliers.evaluationDocument}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product_suppliers.name +  demande  + product_suppliers.evaluationDocument" expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="product.suppliers.evaluationDocument">
+                <parentTerm text="suppliers" datatype="Supplier" termtype="ENTITY" fulltext="product.suppliers">
+                  <parentTerm text="product" datatype="Product" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="name" datatype="String" termtype="ATTRIBUTE" fulltext="product.suppliers.name">
+                <parentTerm text="suppliers" datatype="Supplier" termtype="ENTITY" fulltext="product.suppliers">
+                  <parentTerm text="product" datatype="Product" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="30" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="product.suppliers.evaluationDocument">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.suppliers.evaluationDocument" datatype="String" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="product.suppliers.evaluationDocument">
+                <parentTerm text="suppliers" datatype="Supplier" termtype="ENTITY" fulltext="product.suppliers">
+                  <parentTerm text="product" datatype="Product" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="product.productId">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.productId" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+            <referencedTermList>
+              <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="product.productId">
+                <parentTerm text="product" datatype="Product" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="7">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <conditionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="110" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="'Auto-Evaluation'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.suppliers.evaluationDocument = 'Auto-Evaluation'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="product.suppliers.evaluationDocument">
+                <parentTerm text="suppliers" datatype="Supplier" termtype="ENTITY" fulltext="product.suppliers">
+                  <parentTerm text="product" datatype="Product" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="{productId#civilLiability, productId#littoral, productId#horizon}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.productId = 'civilLiability' or product.productId = 'littoral' or product.productId = 'horizon'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="product.productId">
+                <parentTerm text="product" datatype="Product" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet=""/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="'Expertise'">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.suppliers.evaluationDocument = 'Expertise'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="evaluationDocument" datatype="String" termtype="ATTRIBUTE" fulltext="product.suppliers.evaluationDocument">
+                <parentTerm text="suppliers" datatype="Supplier" termtype="ENTITY" fulltext="product.suppliers">
+                  <parentTerm text="product" datatype="Product" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="{productId#civilLiability, productId#littoral, productId#horizon}">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="product.productId = 'civilLiability' or product.productId = 'littoral' or product.productId = 'horizon'" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="product.productId">
+                <parentTerm text="product" datatype="Product" termtype="ENTITY" fulltext="product" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

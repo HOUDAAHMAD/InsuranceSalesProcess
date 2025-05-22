@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_UIA-gGvoEe2b48ZqKZv1Zg" externalChecksum="7824986:4082745666:2146616488" rulesheetAssets="calculatePremiumCivilLiabilityOther.ers#/0 calculatePremiumCivilLiabilityHorizon.ers#/0" studioType="Java">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_ORs-UGvbEe2fDcPgRqDxBQ" vocabulary="../../../../InsuranceSalesProcess.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Calculer la prime de la garantie RC (autres produits)" order="2" ruleActivityUpdateStamp="_WDP-8kl0Ee2nos-FmUeMHQ" invokes="calculatePremiumCivilLiabilityOther.ers#/0/@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Calculer la prime de la garantie RC (produit Horizon)" order="1" ruleActivityUpdateStamp="_ITS2Ekl0Ee2nos-FmUeMHQ" nextStep="#//@ruleflow/@flowControlList.0" invokes="calculatePremiumCivilLiabilityHorizon.ers#/0/@ruleset"/>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="24" y="192" width="385" height="49" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="24" y="84" width="385" height="48" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.1" targetShape="#//@ruleflowViewList.0/@flowShapeList.0"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuletestAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder="http:///com/corticon/rulesemf/viewtestmodel/ruletest/tabfolder.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.testsheet.treeset="http:///com/corticon/rulesemf/viewtestmodel/testsheet/treeset.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_dsO-gJZgEe2keaw8gxoNwA" externalChecksum="7824986:1438690353">
+  <testsheetAssets majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_QLt4cJZjEe2keaw8gxoNwA" externalChecksum="7824986:1438690353">
+    <testsheet ruleActivityUpdateStamp="_QK6AIJZjEe2keaw8gxoNwA" ruleActivity="../../Service/UpdateProrata/calculateSSTotal.ers#//@ruleset" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="Calclul SS total par mois, période et année."/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="civilLiability" eAttribute="../../InsuranceSalesProcess.ecore#//Product/productId"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="15.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Product/taxPercent"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="5.900000" eAttribute="../../InsuranceSalesProcess.ecore#//Product/terrorismTax"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Product/contribution" eClass="../../InsuranceSalesProcess.ecore#//Amount">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/discount"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthly"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="6.250000" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthlyDiscount"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/period"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="735.060000" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Product/usageCoverages" eClass="../../InsuranceSalesProcess.ecore#//Coverage">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/belairCode"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/coverageId"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/eligible"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/name"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/package"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/productId"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/taxPercent"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Coverage/premium" eClass="../../InsuranceSalesProcess.ecore#//Amount">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/discount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthly"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthlyDiscount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/period"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="343.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Coverage/premiumTaxOnly" eClass="../../InsuranceSalesProcess.ecore#//Amount">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/discount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthly"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthlyDiscount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/period"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="343.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="4" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Coverage/premiumWithTax" eClass="../../InsuranceSalesProcess.ecore#//Amount">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/discount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthly"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthlyDiscount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/period"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="343.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+              </children>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/firstLevy"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0.500000" eAttribute="../../InsuranceSalesProcess.ecore#//Product/prorataFirstMonth"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Product/optionsCoverages" eClass="../../InsuranceSalesProcess.ecore#//Coverage">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/belairCode"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/coverageId"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/eligible"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/name"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/package"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/productId"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/taxPercent"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/type"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="5" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Coverage/premiumWithTax" eClass="../../InsuranceSalesProcess.ecore#//Amount">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/discount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthly"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthlyDiscount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/period"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="0.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+              </children>
+            </children>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.0" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Product/optionsCoverages" eClass="../../InsuranceSalesProcess.ecore#//Coverage">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/coverageId"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/package"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/productId"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/belairCode"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="5" eReference="../../InsuranceSalesProcess.ecore#//Coverage/premiumWithTax" eClass="../../InsuranceSalesProcess.ecore#//Amount">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/period"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthly"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/discount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthlyDiscount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/eligible"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/name"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/taxPercent"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/type"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Product/contribution" eClass="../../InsuranceSalesProcess.ecore#//Amount">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/period"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthly"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/discount"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="6.250000" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthlyDiscount"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="735.060000" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="civilLiability" eAttribute="../../InsuranceSalesProcess.ecore#//Product/productId"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Product/usageCoverages" eClass="../../InsuranceSalesProcess.ecore#//Coverage">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/coverageId"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/package"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Coverage/premium" eClass="../../InsuranceSalesProcess.ecore#//Amount">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/period"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthly"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/discount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthlyDiscount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="343.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/productId"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/belairCode"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="4" eReference="../../InsuranceSalesProcess.ecore#//Coverage/premiumWithTax" eClass="../../InsuranceSalesProcess.ecore#//Amount">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/period"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthly"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/discount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthlyDiscount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="343.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/eligible"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/name"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Coverage/taxPercent"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="3" eReference="../../InsuranceSalesProcess.ecore#//Coverage/premiumTaxOnly" eClass="../../InsuranceSalesProcess.ecore#//Amount">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/period"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthly"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/discount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/monthlyDiscount"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="343.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+              </children>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Product/firstLevy"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="5.900000" eAttribute="../../InsuranceSalesProcess.ecore#//Product/terrorismTax"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="15.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Product/taxPercent"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="0.500000" eAttribute="../../InsuranceSalesProcess.ecore#//Product/prorataFirstMonth"/>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0"/>
+      </outputMessageSection>
+      <expectedRoot/>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <ruletest vocabularyUpdateStamp="_B44zYJZgEe2keaw8gxoNwA" testsheets="#//@testsheetAssets.0/@testsheet" vocabulary="../../InsuranceSalesProcess.ecore#/"/>
+  <ruletestViewList xsi:type="com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder:TestTabFolder">
+    <testTabList name="untitled_1"/>
+  </ruletestViewList>
+</com.corticon.rulesemf.assetmodel:RuletestAsset>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_-kRGB2vjEe2b48ZqKZv1Zg" externalChecksum="7824986:4082745666:643269079" studioType="Java">
+  <languageCode>fr_FR</languageCode>
+  <ruleset vocabularyUpdateStamp="_ORs-UGvbEe2fDcPgRqDxBQ" vocabulary="../../InsuranceSalesProcess.ecore#/">
+    <rule>
+      <condition/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1"/>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="not (Rating.effectiveStartDate = null)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( Rating.effectiveStartDate = null )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Rating.effectiveStartDate" rhs="not null"/>
+      </condition>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0"/>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+        <opaqueExpression expression="Rating.effectiveEndDate = Days.create(Rating.effectiveStartDate.year +1, 3, 1).addDays(-1).toDate">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.effectiveEndDate = Days.create ( Rating.effectiveStartDate.year + 1 , 3 , 1 ).addDays ( -1 ).toDate" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="effectiveEndDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveEndDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="year" datatype="Integer" termtype="METHOD" fulltext="Rating.effectiveStartDate.year">
+                <parentTerm text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="Rating.effectiveStartDate = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.effectiveStartDate = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="Rating.effectiveStartDate" rhs="null"/>
+      </condition>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="Rating.effectiveStartDate = today">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.effectiveStartDate = today" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+        <opaqueExpression expression="Rating.effectiveEndDate = Days.create(Rating.effectiveStartDate.year +1, 3, 1).addDays(-1).toDate">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.effectiveEndDate = Days.create ( Rating.effectiveStartDate.year + 1 , 3 , 1 ).addDays ( -1 ).toDate" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="effectiveEndDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveEndDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="year" datatype="Integer" termtype="METHOD" fulltext="Rating.effectiveStartDate.year">
+                <parentTerm text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.0 #//@ruleset/@rules.1/@actions.0 #//@ruleset/@rules.2/@actions.0" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="La date d'effet n'est pas renseignée, par défaut, sa valeur est la date du jour {Rating.effectiveStartDate}.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="La date d'effet n'est pas renseignée, par défaut, sa valeur est la date du jour  + Rating.effectiveStartDate + ." expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+              <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.1 #//@ruleset/@rules.1/@actions.1 #//@ruleset/@rules.2/@actions.1" logicalVariable="#//@ruleset/@logicalVariables.0">
+      <text expression="La date de fin d'effet est calculé à partir de la date d'effet ({Rating.effectiveStartDate}), pour cela on récupère toujours le dernier jour du mois de février de l'année suivante, c'est-à-dire le {Rating.effectiveEndDate}.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="La date de fin d'effet est calculé à partir de la date d'effet ( + Rating.effectiveStartDate + ), pour cela on récupère toujours le dernier jour du mois de février de l'année suivante, c'est-à-dire le  + Rating.effectiveEndDate + ." expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+              <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="effectiveEndDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveEndDate">
+              <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable entity="../../InsuranceSalesProcess.ecore#//Rating" ruleStatements="#//@ruleset/@ruleStatements.1 #//@ruleset/@ruleStatements.0">
+      <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Rating/effectiveStartDate"/>
+      <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Rating/effectiveEndDate"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightAdvancedView="18" sashWeightConditionsIf="58">
+    <actionSection rowCount="51" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell external="Rating.effectiveStartDate = today">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.effectiveStartDate = today" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="Rating.effectiveEndDate = Days.create(Rating.effectiveStartDate.year +1, 3, 1).addDays(-1).toDate">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.effectiveEndDate = Days.create ( Rating.effectiveStartDate.year + 1 , 3 , 1 ).addDays ( -1 ).toDate" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="effectiveEndDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveEndDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="year" datatype="Integer" termtype="METHOD" fulltext="Rating.effectiveStartDate.year">
+                <parentTerm text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="49" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1545" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="A"/>
+        <text external="La date d'effet n'est pas renseignée, par défaut, sa valeur est la date du jour {Rating.effectiveStartDate}.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="La date d'effet n'est pas renseignée, par défaut, sa valeur est la date du jour  + Rating.effectiveStartDate + ." expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList rowHeight="32" ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="B"/>
+        <text external="La date de fin d'effet est calculé à partir de la date d'effet ({Rating.effectiveStartDate}), pour cela on récupère toujours le dernier jour du mois de février de l'année suivante, c'est-à-dire le {Rating.effectiveEndDate}.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="La date de fin d'effet est calculé à partir de la date d'effet ( + Rating.effectiveStartDate + ), pour cela on récupère toujours le dernier jour du mois de février de l'année suivante, c'est-à-dire le  + Rating.effectiveEndDate + ." expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="effectiveEndDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveEndDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="45" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="Rating.effectiveStartDate">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.effectiveStartDate" datatype="DateTime" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="34" pRule="#//@ruleset/@rules.0">
+        <conditionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="83" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="not null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="not ( Rating.effectiveStartDate = null )" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="79" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.effectiveStartDate = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

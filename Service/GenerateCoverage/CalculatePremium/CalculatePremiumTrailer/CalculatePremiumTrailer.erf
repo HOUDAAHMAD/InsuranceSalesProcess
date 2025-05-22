@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_80DLGdYzEe6u_4ZEsVEU5Q" externalChecksum="7824986:1438690353:44808922" rulesheetAssets="CalculatePremiumTrailerCivilLiability.ers#/ ../../../CalculateBasicPremiumRate/RulesheetNewMethod/DeleteUnusedRate.ers#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_2vBrsI30Ee6HQcjeexYNzQ" vocabulary="../../../../InsuranceSalesProcess.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Calcul de la prime des garanties remorques" order="5" ruleActivityUpdateStamp="_MBci0Ul0Ee2nos-FmUeMHQ" nextStep="#//@ruleflow/@flowControlList.2" invokes="CalculatePremiumTrailerCivilLiability.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Récupération des tarifications Remorque" order="4" ruleActivityUpdateStamp="_80DLF9YzEe6u_4ZEsVEU5Q" nextStep="#//@ruleflow/@flowControlList.0" invokes="#//@ruleflow/@connectorList.0"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Suppression des taux inutilisés" order="6" ruleActivityUpdateStamp="_-N6_4zJ6Ee2js_D2LiD5mw" invokes="../../../CalculateBasicPremiumRate/RulesheetNewMethod/DeleteUnusedRate.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="1" ruleActivityUpdateStamp="_80DLF9YzEe6u_4ZEsVEU5Q" invokes="#//@ruleflow/@subflowList.0"/>
+    <subflowList name="Legenda">
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="3" ruleActivityUpdateStamp="_80DLF9YzEe6u_4ZEsVEU5Q" invokes="#//@ruleflow/@subflowList.0/@subflowList.0"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="2" ruleActivityUpdateStamp="_80DLF9YzEe6u_4ZEsVEU5Q" invokes="#//@ruleflow/@subflowList.0/@subflowList.1"/>
+      <subflowList name="Service Call-out"/>
+      <subflowList name="Rulesheet"/>
+    </subflowList>
+    <connectorList className="ProductFinancingRecords" serviceName="loadDataGrid">
+      <connectorDecryptedProperties name="Datasource Name" value="Extranet"/>
+      <connectorDecryptedProperties name="Query Name" value="GetTrailerCoverageTarif"/>
+    </connectorList>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="24" y="168" width="361" height="45" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="24" y="78" width="361" height="43" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="8421631"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="24" y="261" width="361" height="46" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.2">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="522" y="48" width="271" height="180" activityNode="#//@ruleflow/@flowControlList.3"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="37" y="12" width="186" height="29" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.0">
+      <annotations name="Color" value="8421631"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="37" y="78" width="186" height="25" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.1">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0" targetShape="#//@ruleflowViewList.0/@flowShapeList.2"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.1" targetShape="#//@ruleflowViewList.0/@flowShapeList.0"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

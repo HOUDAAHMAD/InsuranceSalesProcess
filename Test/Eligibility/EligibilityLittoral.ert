@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuletestAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder="http:///com/corticon/rulesemf/viewtestmodel/ruletest/tabfolder.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.testsheet.treeset="http:///com/corticon/rulesemf/viewtestmodel/testsheet/treeset.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_H2iZ8W_GEe2jL_P30FmZPg" externalChecksum="7824986:4082745666" studioType="Java">
+  <testsheetAssets majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_y2Ex8j5vEe2Vhdo4qTh_XA" externalChecksum="7824986:1438690353">
+    <testsheet ruleActivityUpdateStamp="_NKkKoSlBEe2ch-ZFedjE2A" ruleActivity="../../Service/DefineEligibility/defineEligibilityLittoral.ers#//@ruleset" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Violation" text="Le produit n'est pas éligible car la valeur du risque est strictement inférieure à 1 000 €."/>
+        <PostedMessage severity="Violation" text="Le produit n'est pas éligible car la valeur du risque est strictement supérieure à 80 000 €."/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/defaultProductId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/effectiveStartDate"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/productId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="500" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" manuallyCreated="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/defaultProductId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/effectiveStartDate"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/productId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="90000" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Model/decision"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Model/id"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Model/length"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Model/name"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="sailboat" eAttribute="../../InsuranceSalesProcess.ecore#//Model/type"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/terrorismTax"/>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/decision"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/productId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/defaultProductId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/Supplier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/GrossWeightVehicleRating"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="500" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/effectiveStartDate"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.0" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="littoral" eAttribute="../../InsuranceSalesProcess.ecore#//Product/id"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/decision"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/productId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/defaultProductId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/Supplier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/decision"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/length"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/name"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/id"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="sailboat" eAttribute="../../InsuranceSalesProcess.ecore#//Model/type"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="90000" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/effectiveStartDate"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" newOrModified="true" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.1" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Product/terrorismTax"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="littoral" eAttribute="../../InsuranceSalesProcess.ecore#//Product/id"/>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0/@children.6"/>
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.1" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.1/@children.6"/>
+      </outputMessageSection>
+      <expectedRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/productId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/defaultProductId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/flag"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/year"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="500" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/effectiveStartDate"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/productId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/defaultProductId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/year"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/decision"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/length"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/name"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/id"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="sailboat" eAttribute="../../InsuranceSalesProcess.ecore#//Model/type"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="90000" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/effectiveStartDate"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Product/terrorismTax"/>
+          </children>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <testsheetAssets majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_xD3NcT5vEe2Vhdo4qTh_XA" externalChecksum="7824986:1438690353">
+    <testsheet ruleActivityUpdateStamp="_NKkKoSlBEe2ch-ZFedjE2A" ruleActivity="../../Service/DefineEligibility/defineEligibilityLittoral.ers#//@ruleset" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Violation" text="Le produit n'est pas éligible car la valeur du risque est strictement inférieure à 1 000 €."/>
+        <PostedMessage severity="Violation" text="Le produit n'est pas éligible car la construction du risque est antérieure à 1970."/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/defaultProductId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/effectiveStartDate"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/productId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="500" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="1965" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/year"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/decision"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/productId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/defaultProductId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/Supplier"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1965" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/year"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/GrossWeightVehicleRating"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="500" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/effectiveStartDate"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" messageItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.0 #//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.1" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="littoral" eAttribute="../../InsuranceSalesProcess.ecore#//Product/id"/>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.6"/>
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.1" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.6"/>
+      </outputMessageSection>
+      <expectedRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/productId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/defaultProductId"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/flag"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="1965" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/year"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="500" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/effectiveStartDate"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+          </children>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <testsheetAssets majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_mIseQCejEe2tDtRbfd0WpQ" externalChecksum="7824986:1438690353">
+    <testsheet ruleActivityUpdateStamp="_NKkKoSlBEe2ch-ZFedjE2A" ruleActivity="../../Service/DefineEligibility/defineEligibilityLittoral.ers#//@ruleset" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Violation" text="Le produit n'est pas éligible car il y a la présence de l'usage rental"/>
+        <PostedMessage severity="Violation" text="Le produit n'est pas éligible car il y a la présence de l'usage rental"/>
+        <PostedMessage severity="Violation" text="Le produit n'est pas éligible car il y a la présence de l'usage residence."/>
+        <PostedMessage severity="Violation" text="Le produit n'est pas éligible car il y a la présence de l'usage residence."/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/usage" eClass="../../InsuranceSalesProcess.ecore#//Usage">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/frequency"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/withProfessionalManager"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/residence"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" manuallyCreated="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2000" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/usage" eClass="../../InsuranceSalesProcess.ecore#//Usage">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/frequency"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/withProfessionalManager"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/rental"/>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/decision"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/GrossWeightVehicleRating"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Rating/usage" eClass="../../InsuranceSalesProcess.ecore#//Usage">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/withProfessionalManager"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="residence" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/id"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/residence"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/frequency"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" messageItem="#//@testsheetAssets.2/@testsheetViewList.0/@outputMessageSection/@messageItemList.1 #//@testsheetAssets.2/@testsheetViewList.0/@outputMessageSection/@messageItemList.3" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="littoral" eAttribute="../../InsuranceSalesProcess.ecore#//Product/id"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/decision"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/GrossWeightVehicleRating"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="2000" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Rating/usage" eClass="../../InsuranceSalesProcess.ecore#//Usage">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/withProfessionalManager"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="rental" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/id"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/frequency"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/rental"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" newOrModified="true" messageItem="#//@testsheetAssets.2/@testsheetViewList.0/@outputMessageSection/@messageItemList.0 #//@testsheetAssets.2/@testsheetViewList.0/@outputMessageSection/@messageItemList.2" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="littoral" eAttribute="../../InsuranceSalesProcess.ecore#//Product/id"/>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.2/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.2/@testsheetViewList.0/@outputRoot/@children.1/@children.3"/>
+        <messageItemList postedMessage="#//@testsheetAssets.2/@testsheet/@output/@PostedMessage.1" testNode="#//@testsheetAssets.2/@testsheetViewList.0/@outputRoot/@children.0/@children.3"/>
+        <messageItemList postedMessage="#//@testsheetAssets.2/@testsheet/@output/@PostedMessage.2" testNode="#//@testsheetAssets.2/@testsheetViewList.0/@outputRoot/@children.1/@children.3"/>
+        <messageItemList postedMessage="#//@testsheetAssets.2/@testsheet/@output/@PostedMessage.3" testNode="#//@testsheetAssets.2/@testsheetViewList.0/@outputRoot/@children.0/@children.3"/>
+      </outputMessageSection>
+      <expectedRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/flag"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/year"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Rating/usage" eClass="../../InsuranceSalesProcess.ecore#//Usage">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/withProfessionalManager"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/frequency"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/rental"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/residence"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/flag"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/year"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="2000" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Rating/usage" eClass="../../InsuranceSalesProcess.ecore#//Usage">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/withProfessionalManager"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/frequency"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/rental"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+          </children>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <testsheetAssets majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_yehV8ChoEe28suMZ1UC6Ww" externalChecksum="7824986:1438690353">
+    <testsheet ruleActivityUpdateStamp="_NKkKoSlBEe2ch-ZFedjE2A" ruleActivity="../../Service/DefineEligibility/defineEligibilityLittoral.ers#//@ruleset" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Violation" text="Le produit n'est pas éligible car il y a la présence de l'usage &quot;professionalUsage&quot; (bateau à moteur)."/>
+        <PostedMessage severity="Violation" text="Le produit n'est pas éligible car il y a la présence de l'usage &quot;professionalUsage&quot; (voilier)."/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="sailboat" eAttribute="../../InsuranceSalesProcess.ecore#//Model/type"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/usage" eClass="../../InsuranceSalesProcess.ecore#//Usage">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/frequency"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/withProfessionalManager"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="usageProfessional" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/usageType"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" manuallyCreated="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="motorboat" eAttribute="../../InsuranceSalesProcess.ecore#//Model/type"/>
+            </children>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/usage" eClass="../../InsuranceSalesProcess.ecore#//Usage">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/frequency"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/withProfessionalManager"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="usageProfessional" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/usageType"/>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/decision"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="sailboat" eAttribute="../../InsuranceSalesProcess.ecore#//Model/type"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/GrossWeightVehicleRating"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Rating/usage" eClass="../../InsuranceSalesProcess.ecore#//Usage">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/withProfessionalManager"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="professionalUsage" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/id"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/frequency"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="professional" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/usageType"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" messageItem="#//@testsheetAssets.3/@testsheetViewList.0/@outputMessageSection/@messageItemList.1" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="littoral" eAttribute="../../InsuranceSalesProcess.ecore#//Product/id"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Rating/decision"/>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="motorboat" eAttribute="../../InsuranceSalesProcess.ecore#//Model/type"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/GrossWeightVehicleRating"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Rating/usage" eClass="../../InsuranceSalesProcess.ecore#//Usage">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/withProfessionalManager"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="professionalUsage" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/id"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="true" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/frequency"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="professional" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/usageType"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" newOrModified="true" messageItem="#//@testsheetAssets.3/@testsheetViewList.0/@outputMessageSection/@messageItemList.0" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="littoral" eAttribute="../../InsuranceSalesProcess.ecore#//Product/id"/>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.3/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.3/@testsheetViewList.0/@outputRoot/@children.1/@children.3"/>
+        <messageItemList postedMessage="#//@testsheetAssets.3/@testsheet/@output/@PostedMessage.1" testNode="#//@testsheetAssets.3/@testsheetViewList.0/@outputRoot/@children.0/@children.3"/>
+      </outputMessageSection>
+      <expectedRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/flag"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/year"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="sailboat" eAttribute="../../InsuranceSalesProcess.ecore#//Model/type"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" eReference="../../InsuranceSalesProcess.ecore#//Rating/usage" eClass="../../InsuranceSalesProcess.ecore#//Usage">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/withProfessionalManager"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="usageProfessional" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/usageType"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/frequency"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="2" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/owner"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/personalEffects"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/flag"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/frenchRegistration"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/year"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Model/priceVariation"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="motorboat" eAttribute="../../InsuranceSalesProcess.ecore#//Model/type"/>
+            </children>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="10" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/power"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/value"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Risk/age"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" eReference="../../InsuranceSalesProcess.ecore#//Rating/usage" eClass="../../InsuranceSalesProcess.ecore#//Usage">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/withProfessionalManager"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="usageProfessional" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/usageType"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Usage/frequency"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="2" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/products" eClass="../../InsuranceSalesProcess.ecore#//Product">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="false" eAttribute="../../InsuranceSalesProcess.ecore#//Product/eligible"/>
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" eAttribute="../../InsuranceSalesProcess.ecore#//Product/name"/>
+          </children>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <ruletest vocabularyUpdateStamp="_r3yCkWywEe2_R4mAfmLfoA" testsheets="#//@testsheetAssets.0/@testsheet #//@testsheetAssets.1/@testsheet #//@testsheetAssets.2/@testsheet #//@testsheetAssets.3/@testsheet" vocabulary="../../InsuranceSalesProcess.ecore#/"/>
+  <ruletestViewList xsi:type="com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder:TestTabFolder">
+    <testTabList name="value"/>
+    <testTabList name="age"/>
+    <testTabList name="uses"/>
+    <testTabList name="professionnalUsage"/>
+  </ruletestViewList>
+</com.corticon.rulesemf.assetmodel:RuletestAsset>

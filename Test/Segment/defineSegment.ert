@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuletestAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder="http:///com/corticon/rulesemf/viewtestmodel/ruletest/tabfolder.ecore" xmlns:com.corticon.rulesemf.viewtestmodel.testsheet.treeset="http:///com/corticon/rulesemf/viewtestmodel/testsheet/treeset.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_IHPIYW_GEe2jL_P30FmZPg" externalChecksum="7824986:4082745666" studioType="Java">
+  <testsheetAssets majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_aEF_4Gp-Ee2T4eRPm49GYw" externalChecksum="7824986:4082745666">
+    <testsheet ruleActivityUpdateStamp="_aDNPEGp-Ee2T4eRPm49GYw" ruleActivity="../../Service/Segment/defineSegment.ers#//@ruleset" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Warning" text="Le segment n'a pas été trouvé à partir du code renseigné, alors, la tarification s'effectuera pour un segment &quot;Inconnu&quot; ayant un taux à 0 % et une décision de tarification &quot;manuel&quot;."/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Model/segment" eClass="../../InsuranceSalesProcess.ecore#//Segment"/>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="jet" eAttribute="../../InsuranceSalesProcess.ecore#//Model/type"/>
+            </children>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true" passed="false">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" passed="false" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" passed="false" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" passed="false" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" messageItem="#//@testsheetAssets.0/@testsheetViewList.0/@outputMessageSection/@messageItemList.0" eReference="../../InsuranceSalesProcess.ecore#//Model/segment" eClass="../../InsuranceSalesProcess.ecore#//Segment">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="?" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/code"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="manual" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/decision"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/rate"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Inconnu" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/name"/>
+              </children>
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" passed="false" issue="Extra" value="jet" eAttribute="../../InsuranceSalesProcess.ecore#//Model/type"/>
+            </children>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.0/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.0/@testsheetViewList.0/@outputRoot/@children.0/@children.0/@children.0/@children.0"/>
+      </outputMessageSection>
+      <expectedRoot passed="false">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" passed="false" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" passed="false" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" passed="false" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Model/segment" eClass="../../InsuranceSalesProcess.ecore#//Segment">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="?" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/code"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="manual" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/decision"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/rate"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="Inconnu" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/name"/>
+              </children>
+            </children>
+          </children>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <testsheetAssets majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_aFl0sGp-Ee2T4eRPm49GYw" externalChecksum="7824986:4082745666">
+    <testsheet ruleActivityUpdateStamp="_aDNPEGp-Ee2T4eRPm49GYw" ruleActivity="../../Service/Segment/defineSegment.ers#//@ruleset" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="Récupération du taux appliqué pour ce segment &quot;JS&quot; qui est de 3,000000 % avec une décision de tarification &quot;automatic&quot;."/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Model/segment" eClass="../../InsuranceSalesProcess.ecore#//Segment">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="JS" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/code"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/rate"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Jet Ski 2 places" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/name"/>
+              </children>
+            </children>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" messageItem="#//@testsheetAssets.1/@testsheetViewList.0/@outputMessageSection/@messageItemList.0" eReference="../../InsuranceSalesProcess.ecore#//Model/segment" eClass="../../InsuranceSalesProcess.ecore#//Segment">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="JS" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/code"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="automatic" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/decision"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="3.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/rate"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Jet Ski 2 places" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/name"/>
+              </children>
+            </children>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.1/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.1/@testsheetViewList.0/@outputRoot/@children.0/@children.0/@children.0/@children.0"/>
+      </outputMessageSection>
+      <expectedRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Model/segment" eClass="../../InsuranceSalesProcess.ecore#//Segment">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="JS" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/code"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="automatic" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/decision"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="3.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/rate"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Jet Ski 2 places" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/name"/>
+              </children>
+            </children>
+          </children>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <testsheetAssets majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_aEawAGp-Ee2T4eRPm49GYw" externalChecksum="7824986:4082745666">
+    <testsheet ruleActivityUpdateStamp="_aDNPEGp-Ee2T4eRPm49GYw" ruleActivity="../../Service/Segment/defineSegment.ers#//@ruleset" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="Récupération du taux appliqué pour ce segment &quot;MY&quot; qui est de -17,000000 % avec une décision de tarification &quot;manual&quot;."/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Model/segment" eClass="../../InsuranceSalesProcess.ecore#//Segment">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="MY" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/code"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/rate"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Moteur Yacht" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/name"/>
+              </children>
+            </children>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" messageItem="#//@testsheetAssets.2/@testsheetViewList.0/@outputMessageSection/@messageItemList.0" eReference="../../InsuranceSalesProcess.ecore#//Model/segment" eClass="../../InsuranceSalesProcess.ecore#//Segment">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="MY" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/code"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="manual" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/decision"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="-17.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/rate"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Moteur Yacht" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/name"/>
+              </children>
+            </children>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.2/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.2/@testsheetViewList.0/@outputRoot/@children.0/@children.0/@children.0/@children.0"/>
+      </outputMessageSection>
+      <expectedRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Model/segment" eClass="../../InsuranceSalesProcess.ecore#//Segment">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="MY" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/code"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="manual" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/decision"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="-17.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/rate"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Moteur Yacht" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/name"/>
+              </children>
+            </children>
+          </children>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <testsheetAssets majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_aElvIGp-Ee2T4eRPm49GYw" externalChecksum="7824986:4082745666">
+    <testsheet ruleActivityUpdateStamp="_aDNPEGp-Ee2T4eRPm49GYw" ruleActivity="../../Service/Segment/defineSegment.ers#//@ruleset" locale="">
+      <input/>
+      <output>
+        <PostedMessage severity="Info" text="Récupération du taux appliqué pour ce segment &quot;VCL&quot; qui est de 0,000000 % avec une décision de tarification &quot;refuse&quot;."/>
+      </output>
+      <expectedOutput/>
+    </testsheet>
+    <testsheetViewList xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestTreeSet">
+      <inputRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" manuallyCreated="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" manuallyCreated="true" eReference="../../InsuranceSalesProcess.ecore#//Model/segment" eClass="../../InsuranceSalesProcess.ecore#//Segment">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="VCL" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/code"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/rate"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" manuallyCreated="true" value="Voilier Classique/Unité en bois/Vieille Marine" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/name"/>
+              </children>
+            </children>
+          </children>
+        </children>
+      </inputRoot>
+      <outputRoot newOrModified="true">
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" messageItem="#//@testsheetAssets.3/@testsheetViewList.0/@outputMessageSection/@messageItemList.0" eReference="../../InsuranceSalesProcess.ecore#//Model/segment" eClass="../../InsuranceSalesProcess.ecore#//Segment">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="VCL" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/code"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="refuse" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/decision"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/rate"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Voilier Classique/Unité en bois/Vieille Marine" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/name"/>
+              </children>
+            </children>
+          </children>
+        </children>
+      </outputRoot>
+      <outputMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600">
+        <messageItemList postedMessage="#//@testsheetAssets.3/@testsheet/@output/@PostedMessage.0" testNode="#//@testsheetAssets.3/@testsheetViewList.0/@outputRoot/@children.0/@children.0/@children.0/@children.0"/>
+      </outputMessageSection>
+      <expectedRoot>
+        <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestEntity" nodeID="1" newOrModified="true" eClass="../../InsuranceSalesProcess.ecore#//Rating">
+          <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Rating/risk" eClass="../../InsuranceSalesProcess.ecore#//Risk">
+            <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Risk/model" eClass="../../InsuranceSalesProcess.ecore#//Model">
+              <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAssociationImbedded" nodeID="1" newOrModified="true" eReference="../../InsuranceSalesProcess.ecore#//Model/segment" eClass="../../InsuranceSalesProcess.ecore#//Segment">
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="VCL" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/code"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="refuse" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/decision"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" newOrModified="true" value="0.000000" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/rate"/>
+                <children xsi:type="com.corticon.rulesemf.viewtestmodel.testsheet.treeset:TestAttribute" value="Voilier Classique/Unité en bois/Vieille Marine" eAttribute="../../InsuranceSalesProcess.ecore#//Segment/name"/>
+              </children>
+            </children>
+          </children>
+        </children>
+      </expectedRoot>
+      <expectedMessageSection rowCount="20" columnWidthSeverity="100" columnWidthMessage="600"/>
+    </testsheetViewList>
+  </testsheetAssets>
+  <ruletest vocabularyUpdateStamp="_r3yCkWywEe2_R4mAfmLfoA" testsheets="#//@testsheetAssets.0/@testsheet #//@testsheetAssets.1/@testsheet #//@testsheetAssets.2/@testsheet #//@testsheetAssets.3/@testsheet" vocabulary="../../InsuranceSalesProcess.ecore#/"/>
+  <ruletestViewList xsi:type="com.corticon.rulesemf.viewtestmodel.ruletest.tabfolder:TestTabFolder">
+    <testTabList name="noSegment"/>
+    <testTabList name="JS"/>
+    <testTabList name="MY"/>
+    <testTabList name="VCL"/>
+  </ruletestViewList>
+</com.corticon.rulesemf.assetmodel:RuletestAsset>

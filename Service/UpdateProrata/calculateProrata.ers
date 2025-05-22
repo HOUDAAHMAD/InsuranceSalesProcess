@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_qWAEwJZHEe2keaw8gxoNwA" externalChecksum="7824986:1438690353:643269079">
+  <languageCode>en</languageCode>
+  <ruleset vocabularyUpdateStamp="_9bi44JWwEe2t9-mCIAEugg" vocabulary="../../InsuranceSalesProcess.ecore#/">
+    <rule>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.0">
+        <opaqueExpression expression="products.periodNumberDays = Rating.effectiveStartDate.daysBetween(Rating.effectiveEndDate) +1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodNumberDays = Rating.effectiveStartDate.daysBetween ( Rating.effectiveEndDate ) + 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="periodNumberDays" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberDays">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="daysBetween" datatype="Integer" termtype="METHOD" fulltext="Rating.effectiveStartDate.daysBetween">
+                <parentTerm text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="effectiveEndDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveEndDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action documentingRuleStatements="#//@ruleset/@ruleStatements.1">
+        <opaqueExpression expression="products.periodNumberMonths = Rating.effectiveStartDate.monthsBetween(Rating.effectiveEndDate) +1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodNumberMonths = Rating.effectiveStartDate.monthsBetween ( Rating.effectiveEndDate ) + 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="periodNumberMonths" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberMonths">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="monthsBetween" datatype="Integer" termtype="METHOD" fulltext="Rating.effectiveStartDate.monthsBetween">
+                <parentTerm text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="effectiveEndDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveEndDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action>
+        <opaqueExpression expression="products.lastDayInFirstMonth=Days.create(Rating.effectiveStartDate.year , Rating.effectiveStartDate.month+1, 1).addDays(-1)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.lastDayInFirstMonth = Days.create ( Rating.effectiveStartDate.year , Rating.effectiveStartDate.month + 1 , 1 ).addDays ( -1 )" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="lastDayInFirstMonth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="products.lastDayInFirstMonth">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="year" datatype="Integer" termtype="METHOD" fulltext="Rating.effectiveStartDate.year">
+                <parentTerm text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="month" datatype="Integer" termtype="METHOD" fulltext="Rating.effectiveStartDate.month">
+                <parentTerm text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="products.firstDayInFirstMonth=Days.create(products.lastDayInFirstMonth.year , products.lastDayInFirstMonth.month, 1)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.firstDayInFirstMonth = Days.create ( products.lastDayInFirstMonth.year , products.lastDayInFirstMonth.month , 1 )" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="firstDayInFirstMonth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="products.firstDayInFirstMonth">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="month" datatype="Integer" termtype="METHOD" fulltext="products.lastDayInFirstMonth.month">
+                <parentTerm text="lastDayInFirstMonth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="products.lastDayInFirstMonth">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="year" datatype="Integer" termtype="METHOD" fulltext="products.lastDayInFirstMonth.year">
+                <parentTerm text="lastDayInFirstMonth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="products.lastDayInFirstMonth">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="products.firstMonthNbDay=products.firstDayInFirstMonth.daysBetween(products.lastDayInFirstMonth)+1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.firstMonthNbDay = products.firstDayInFirstMonth.daysBetween ( products.lastDayInFirstMonth ) + 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="firstMonthNbDay" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.firstMonthNbDay">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="lastDayInFirstMonth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="products.lastDayInFirstMonth">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="daysBetween" datatype="Integer" termtype="METHOD" fulltext="products.firstDayInFirstMonth.daysBetween">
+                <parentTerm text="firstDayInFirstMonth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="products.firstDayInFirstMonth">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="products.prorataFirstMonth=(Rating.effectiveStartDate.daysBetween(products.lastDayInFirstMonth)+2)/products.firstMonthNbDay">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.prorataFirstMonth = ( Rating.effectiveStartDate.daysBetween ( products.lastDayInFirstMonth ) + 2 ) / products.firstMonthNbDay" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="prorataFirstMonth" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.prorataFirstMonth">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="firstMonthNbDay" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.firstMonthNbDay">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="lastDayInFirstMonth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="products.lastDayInFirstMonth">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="daysBetween" datatype="Integer" termtype="METHOD" fulltext="Rating.effectiveStartDate.daysBetween">
+                <parentTerm text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="products.prorataFirstMonth=products.prorataFirstMonth.round(8)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.prorataFirstMonth = products.prorataFirstMonth.round ( 8 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="prorataFirstMonth" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.prorataFirstMonth">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="round" datatype="Decimal" termtype="METHOD" fulltext="products.prorataFirstMonth.round">
+                <parentTerm text="prorataFirstMonth" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.prorataFirstMonth">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.2">
+      <condition>
+        <opaqueExpression expression="products.periodNumberDays = 366">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodNumberDays = 366" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="periodNumberDays" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberDays">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="products.periodNumberDays" rhs="366"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="products.periodProrata = products.periodNumberDays / 366">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodProrata = products.periodNumberDays / 366" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="periodNumberDays" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberDays">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action>
+        <opaqueExpression expression="products.periodProrata = products.periodProrata.round(8)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodProrata = products.periodProrata.round ( 8 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="round" datatype="Decimal" termtype="METHOD" fulltext="products.periodProrata.round">
+                <parentTerm text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule documentingRuleStatements="#//@ruleset/@ruleStatements.3">
+      <condition>
+        <opaqueExpression expression="products.periodNumberDays &lt;> 366 or products.periodNumberDays = null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodNumberDays &lt;> 366 or products.periodNumberDays = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="periodNumberDays" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberDays">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="products.periodNumberDays" rhs="other"/>
+      </condition>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="products.periodProrata = products.periodNumberDays / 365">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodProrata = products.periodNumberDays / 365" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="periodNumberDays" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberDays">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="products.periodProrata = products.periodProrata.round(8)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodProrata = products.periodProrata.round ( 8 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="round" datatype="Decimal" termtype="METHOD" fulltext="products.periodProrata.round">
+                <parentTerm text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="Rating.effectiveStartDate &lt;> null">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.effectiveStartDate &lt;> null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+              <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <filter precondition="true" logicalVariables="#//@ruleset/@logicalVariables.0">
+      <opaqueExpression expression="Rating.effectiveEndDate &lt;> null">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.effectiveEndDate &lt;> null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+          <referencedTermList>
+            <terms text="effectiveEndDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveEndDate">
+              <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </opaqueExpression>
+    </filter>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.0" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+      <text expression="La période entre {Rating.effectiveStartDate} et {Rating.effectiveEndDate} contient {products.periodNumberDays} jours.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="La période entre  + Rating.effectiveStartDate +  et  + Rating.effectiveEndDate +  contient  + products.periodNumberDays +  jours." expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+              <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="periodNumberDays" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberDays">
+              <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+            <terms text="effectiveEndDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveEndDate">
+              <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.0/@actions.1" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+      <text expression="La période entre {Rating.effectiveStartDate} et {Rating.effectiveEndDate} contient {products.periodNumberMonths} mois.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="La période entre  + Rating.effectiveStartDate +  et  + Rating.effectiveEndDate +  contient  + products.periodNumberMonths +  mois." expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+              <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+            <terms text="periodNumberMonths" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberMonths">
+              <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+            <terms text="effectiveEndDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveEndDate">
+              <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.1" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+      <text expression="La période est de 366 jours. L'obtention du prorata s'obtient en divisant le nombre de jours par 366, soit {products.periodProrata} arrondis.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="La période est de 366 jours. L'obtention du prorata s'obtient en divisant le nombre de jours par 366, soit  + products.periodProrata +  arrondis." expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+              <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <ruleStatement post="Info" ruleModelElements="#//@ruleset/@rules.2" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+      <text expression="La période est de {products.periodNumberDays} jours (différent de 366 jours). L'obtention du prorata s'obtient en divisant le nombre de jours par 365, soit {products.periodProrata} arrondis.">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="La période est de  + products.periodNumberDays +  jours (différent de 366 jours). L'obtention du prorata s'obtient en divisant le nombre de jours par 365, soit  + products.periodProrata +  arrondis." expressiontype="BRSTATEMENT">
+          <referencedTermList>
+            <terms text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+              <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+            <terms text="periodNumberDays" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberDays">
+              <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </text>
+    </ruleStatement>
+    <logicalVariable entity="../../InsuranceSalesProcess.ecore#//Rating" filters="#//@ruleset/@filters.0 #//@ruleset/@filters.1">
+      <extension explicit="true" association="true" entity="../../InsuranceSalesProcess.ecore#//Product" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Rating/products" ruleStatements="#//@ruleset/@ruleStatements.0 #//@ruleset/@ruleStatements.2 #//@ruleset/@ruleStatements.3 #//@ruleset/@ruleStatements.1">
+        <alias value="products"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Product/periodProrata"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Product/periodNumberDays"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Product/productId"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Product/periodNumberMonths"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Product/firstMonthNbDay"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Product/lastDayInFirstMonth"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Product/firstDayInFirstMonth"/>
+        <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Product/prorataFirstMonth"/>
+      </extension>
+      <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Rating/effectiveStartDate"/>
+      <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Rating/effectiveEndDate"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true" sashWeightConditionsIf="77">
+    <actionSection rowCount="57" scrollRowTop="6" columnWidthFactor="0.5">
+      <actionItemList rowHeight="63">
+        <valueSetCell/>
+        <expressionCell external="products.periodNumberDays = Rating.effectiveStartDate.daysBetween(Rating.effectiveEndDate) +1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodNumberDays = Rating.effectiveStartDate.daysBetween ( Rating.effectiveEndDate ) + 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="periodNumberDays" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberDays">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="daysBetween" datatype="Integer" termtype="METHOD" fulltext="Rating.effectiveStartDate.daysBetween">
+                <parentTerm text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="effectiveEndDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveEndDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="43">
+        <valueSetCell/>
+        <expressionCell external="products.periodNumberMonths = Rating.effectiveStartDate.monthsBetween(Rating.effectiveEndDate) +1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodNumberMonths = Rating.effectiveStartDate.monthsBetween ( Rating.effectiveEndDate ) + 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="periodNumberMonths" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberMonths">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="monthsBetween" datatype="Integer" termtype="METHOD" fulltext="Rating.effectiveStartDate.monthsBetween">
+                <parentTerm text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="effectiveEndDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveEndDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell valueSet=""/>
+        <expressionCell/>
+      </actionItemList>
+      <actionItemList rowHeight="55">
+        <valueSetCell/>
+        <expressionCell external="products.lastDayInFirstMonth=Days.create(Rating.effectiveStartDate.year , Rating.effectiveStartDate.month+1, 1).addDays(-1)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.lastDayInFirstMonth = Days.create ( Rating.effectiveStartDate.year , Rating.effectiveStartDate.month + 1 , 1 ).addDays ( -1 )" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="lastDayInFirstMonth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="products.lastDayInFirstMonth">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="year" datatype="Integer" termtype="METHOD" fulltext="Rating.effectiveStartDate.year">
+                <parentTerm text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="month" datatype="Integer" termtype="METHOD" fulltext="Rating.effectiveStartDate.month">
+                <parentTerm text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="49">
+        <valueSetCell valueSet=""/>
+        <expressionCell external="products.firstDayInFirstMonth=Days.create(products.lastDayInFirstMonth.year , products.lastDayInFirstMonth.month, 1)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.firstDayInFirstMonth = Days.create ( products.lastDayInFirstMonth.year , products.lastDayInFirstMonth.month , 1 )" datatype="DateTime" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="firstDayInFirstMonth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="products.firstDayInFirstMonth">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="month" datatype="Integer" termtype="METHOD" fulltext="products.lastDayInFirstMonth.month">
+                <parentTerm text="lastDayInFirstMonth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="products.lastDayInFirstMonth">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="year" datatype="Integer" termtype="METHOD" fulltext="products.lastDayInFirstMonth.year">
+                <parentTerm text="lastDayInFirstMonth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="products.lastDayInFirstMonth">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="64">
+        <valueSetCell/>
+        <expressionCell external="products.firstMonthNbDay=products.firstDayInFirstMonth.daysBetween(products.lastDayInFirstMonth)+1">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.firstMonthNbDay = products.firstDayInFirstMonth.daysBetween ( products.lastDayInFirstMonth ) + 1" datatype="Integer" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="firstMonthNbDay" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.firstMonthNbDay">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="lastDayInFirstMonth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="products.lastDayInFirstMonth">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="daysBetween" datatype="Integer" termtype="METHOD" fulltext="products.firstDayInFirstMonth.daysBetween">
+                <parentTerm text="firstDayInFirstMonth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="products.firstDayInFirstMonth">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList rowHeight="62">
+        <valueSetCell valueSet=""/>
+        <expressionCell external="products.prorataFirstMonth=(Rating.effectiveStartDate.daysBetween(products.lastDayInFirstMonth)+2)/products.firstMonthNbDay">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.prorataFirstMonth = ( Rating.effectiveStartDate.daysBetween ( products.lastDayInFirstMonth ) + 2 ) / products.firstMonthNbDay" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="prorataFirstMonth" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.prorataFirstMonth">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="firstMonthNbDay" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.firstMonthNbDay">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="lastDayInFirstMonth" datatype="DateTime" termtype="ATTRIBUTE" fulltext="products.lastDayInFirstMonth">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="daysBetween" datatype="Integer" termtype="METHOD" fulltext="Rating.effectiveStartDate.daysBetween">
+                <parentTerm text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="products.prorataFirstMonth=products.prorataFirstMonth.round(8)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.prorataFirstMonth = products.prorataFirstMonth.round ( 8 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="prorataFirstMonth" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.prorataFirstMonth">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="round" datatype="Decimal" termtype="METHOD" fulltext="products.prorataFirstMonth.round">
+                <parentTerm text="prorataFirstMonth" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.prorataFirstMonth">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="products.prorataFirstMonth=products.firstMonthNbDay/365">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.prorataFirstMonth = products.firstMonthNbDay / 365" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="prorataFirstMonth" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.prorataFirstMonth">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="firstMonthNbDay" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.firstMonthNbDay">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="products.periodProrata = products.periodNumberDays / 366">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodProrata = products.periodNumberDays / 366" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="periodNumberDays" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberDays">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="products.periodProrata = products.periodNumberDays / 365">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodProrata = products.periodNumberDays / 365" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="periodNumberDays" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberDays">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="products.periodProrata = products.periodProrata.round(8)">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodProrata = products.periodProrata.round ( 8 )" datatype="Decimal" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="round" datatype="Decimal" termtype="METHOD" fulltext="products.periodProrata.round">
+                <parentTerm text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFolder">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="Rating.effectiveStartDate &lt;> null" filter="#//@ruleset/@filters.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeFilter" expression="Rating.effectiveEndDate &lt;> null" filter="#//@ruleset/@filters.1"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.2"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.3"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.4"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.5"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.6"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@extension.0/@referencedAttributes.7"/>
+          </children>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.0/@referencedAttributes.1"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50">
+      <filterItemList filter="#//@ruleset/@filters.0">
+        <expressionCell external="Rating.effectiveStartDate &lt;> null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.effectiveStartDate &lt;> null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+      <filterItemList filter="#//@ruleset/@filters.1">
+        <expressionCell external="Rating.effectiveEndDate &lt;> null">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.effectiveEndDate &lt;> null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="effectiveEndDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveEndDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </filterItemList>
+    </filterSection>
+    <ruleStatementSection rowCount="51" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="1203" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400">
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.0">
+        <reference external="A0"/>
+        <text external="La période entre {Rating.effectiveStartDate} et {Rating.effectiveEndDate} contient {products.periodNumberDays} jours.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="La période entre  + Rating.effectiveStartDate +  et  + Rating.effectiveEndDate +  contient  + products.periodNumberDays +  jours." expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="periodNumberDays" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberDays">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="effectiveEndDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveEndDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.1">
+        <reference external="B0"/>
+        <text external="La période entre {Rating.effectiveStartDate} et {Rating.effectiveEndDate} contient {products.periodNumberMonths} mois.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="La période entre  + Rating.effectiveStartDate +  et  + Rating.effectiveEndDate +  contient  + products.periodNumberMonths +  mois." expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="effectiveStartDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveStartDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+              <terms text="periodNumberMonths" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberMonths">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="effectiveEndDate" datatype="DateTime" termtype="ATTRIBUTE" fulltext="Rating.effectiveEndDate">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.2">
+        <reference external="1"/>
+        <text external="La période est de 366 jours. L'obtention du prorata s'obtient en divisant le nombre de jours par 366, soit {products.periodProrata} arrondis.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="La période est de 366 jours. L'obtention du prorata s'obtient en divisant le nombre de jours par 366, soit  + products.periodProrata +  arrondis." expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+      <ruleStatementItemList ruleStatement="#//@ruleset/@ruleStatements.3">
+        <reference external="2"/>
+        <text external="La période est de {products.periodNumberDays} jours (différent de 366 jours). L'obtention du prorata s'obtient en divisant le nombre de jours par 365, soit {products.periodProrata} arrondis.">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="La période est de  + products.periodNumberDays +  jours (différent de 366 jours). L'obtention du prorata s'obtient en divisant le nombre de jours par 365, soit  + products.periodProrata +  arrondis." expressiontype="BRSTATEMENT">
+            <referencedTermList>
+              <terms text="periodProrata" datatype="Decimal" termtype="ATTRIBUTE" fulltext="products.periodProrata">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+              <terms text="periodNumberDays" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberDays">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </text>
+      </ruleStatementItemList>
+    </ruleStatementSection>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="products.periodNumberDays">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodNumberDays" datatype="Integer" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="periodNumberDays" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberDays">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20" scrollColumnLeft="1">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0">
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="366">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodNumberDays = 366" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="periodNumberDays" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberDays">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="other">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="products.periodNumberDays &lt;> 366 or products.periodNumberDays = null" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="periodNumberDays" datatype="Integer" termtype="ATTRIBUTE" fulltext="products.periodNumberDays">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet=""/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" buildNumber="8017" updateStamp="_3XL50RVCEfC_V9o89sic-g" externalChecksum="7824986:507989954:44808922" rulesheetAssets="RulesheetNewMethod/CalculateRCBasicPremiumRate.ers#/ RulesheetNewMethod/DeleteUnusedRate.ers#/ RulesheetNewMethod/CalculateJetRCBasicPremiumRate.ers#/ RulesheetNewMethod/CalculateLittoralBasicPremiumRate.ers#/ RulesheetNewMethod/ProcessWithLevelUpBasicRate.ers#/ RulesheetNewMethod/CalculateJetMultiriskBasicPremiumRate.ers#/ RulesheetNewMethod/CalculateHorizonBasicPremiumRate.ers#/ adjustEligibility.ers#/ VerifyMinPremium.ers#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_yiI2cBVCEfC_V9o89sic-g" vocabulary="../../InsuranceSalesProcess.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:BranchContainer" name="Définition du taux de base pour un produit bateau/jet" order="5" ruleActivityUpdateStamp="_3XJdkhVCEfC_V9o89sic-g" invokes="#//@ruleflow/@flowControlList.0">
+      <condition expression="Rating.products.productId">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.products.productId" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <referencedTermList>
+            <terms text="productId" datatype="String" termtype="ATTRIBUTE" fulltext="Rating.products.productId">
+              <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </condition>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Récupération des Tarifs" order="6" ruleActivityUpdateStamp="_3XJdkhVCEfC_V9o89sic-g" invokes="#//@ruleflow/@connectorList.0"/>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Calcul du taux de base pour produit RC" order="7" ruleActivityUpdateStamp="_zCYccGsNEe2kONfBQohGRQ" nextStep="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.2" invokes="RulesheetNewMethod/CalculateRCBasicPremiumRate.ers#//@ruleset"/>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Calcul du taux de base pour produit RC Jet" order="8" ruleActivityUpdateStamp="_5bICwynIEe2p3vVz1m7LYg" nextStep="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.3" invokes="RulesheetNewMethod/CalculateJetRCBasicPremiumRate.ers#//@ruleset"/>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Calcul du taux de base pour un produit Jet Multirisque" order="9" ruleActivityUpdateStamp="_OCM0cSnJEe2p3vVz1m7LYg" nextStep="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.4" invokes="RulesheetNewMethod/CalculateJetMultiriskBasicPremiumRate.ers#//@ruleset"/>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Calcul du taux de base pour un produit Littoral" order="10" ruleActivityUpdateStamp="_GM2W4SnLEe2p3vVz1m7LYg" nextStep="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.5" invokes="RulesheetNewMethod/CalculateLittoralBasicPremiumRate.ers#//@ruleset"/>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Calcul du taux de base pour un produit Horizon" order="11" ruleActivityUpdateStamp="_ML69YSnLEe2p3vVz1m7LYg" nextStep="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.6" invokes="RulesheetNewMethod/CalculateHorizonBasicPremiumRate.ers#//@ruleset"/>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Calcul des taux de base pour le niveau supérieur" order="12" ruleActivityUpdateStamp="_QhEOJSnKEe2p3vVz1m7LYg" nextStep="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.7" invokes="RulesheetNewMethod/ProcessWithLevelUpBasicRate.ers#//@ruleset"/>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="VerifyMinPremium" order="13" ruleActivityUpdateStamp="_Dgb2oDTREe27Gqoa6AshAg" invokes="VerifyMinPremium.ers#//@ruleset"/>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Suppression des taux inutilisés" order="14" ruleActivityUpdateStamp="_-N6_4zJ6Ee2js_D2LiD5mw" nextStep="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.9" invokes="RulesheetNewMethod/DeleteUnusedRate.ers#//@ruleset"/>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Correction de l'Eligibilité si absence de taux dans la grille" order="15" ruleActivityUpdateStamp="_9_42gyebEe2tZakj5t3E0Q" invokes="adjustEligibility.ers#//@ruleset"/>
+        <label expression="productId#civilLiability"/>
+        <label expression="productId#horizon"/>
+        <label expression="productId#littoral"/>
+        <label expression="productId#jetCivilLiability"/>
+        <label expression="productId#jetMultirisk"/>
+        <viewExpressions lhs="Rating.products.productId" rhs="productId#jetMultirisk"/>
+      </branches>
+    </flowControlList>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="1" ruleActivityUpdateStamp="_3XJdkhVCEfC_V9o89sic-g" invokes="#//@ruleflow/@subflowList.0"/>
+    <subflowList name="Legenda">
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="4" ruleActivityUpdateStamp="_3XJdkhVCEfC_V9o89sic-g" invokes="#//@ruleflow/@subflowList.0/@subflowList.0"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="3" ruleActivityUpdateStamp="_3XJdkhVCEfC_V9o89sic-g" invokes="#//@ruleflow/@subflowList.0/@subflowList.1"/>
+      <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" order="2" ruleActivityUpdateStamp="_3XJdkhVCEfC_V9o89sic-g" invokes="#//@ruleflow/@subflowList.0/@subflowList.2"/>
+      <subflowList name="Rulesheet"/>
+      <subflowList name="Service Call-out"/>
+      <subflowList name="Branch"/>
+    </subflowList>
+    <connectorList className="ProductFinancingRecords" serviceName="loadDataGrid">
+      <connectorDecryptedProperties name="Datasource Name" value="Extranet"/>
+      <connectorDecryptedProperties name="Query Name" value="GetTarif"/>
+    </connectorList>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:BranchContainerShape" x="24" y="-24" width="685" height="1015" activityNode="#//@ruleflow/@flowControlList.0" valid="true" branchContainer="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="16777088"/>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="115" y="114" width="397" height="55" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.7" activityNode="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.1">
+        <annotations name="Color" value="8454143"/>
+      </flowShapeList>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="115" y="816" width="397" height="55" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.8" activityNode="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.8">
+        <annotations name="Color" value="8454143"/>
+      </flowShapeList>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="115" y="216" width="397" height="55" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.2">
+        <annotations name="Color" value="8454143"/>
+      </flowShapeList>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="115" y="420" width="397" height="55" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.3" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.5" activityNode="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.4">
+        <annotations name="Color" value="8454143"/>
+      </flowShapeList>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="115" y="618" width="397" height="55" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.4" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.6" activityNode="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.6">
+        <annotations name="Color" value="8454143"/>
+      </flowShapeList>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="115" y="318" width="397" height="55" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.5" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" activityNode="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.3">
+        <annotations name="Color" value="8454143"/>
+      </flowShapeList>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="115" y="522" width="397" height="55" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.6" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.3" activityNode="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.5">
+        <annotations name="Color" value="8454143"/>
+      </flowShapeList>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="115" y="12" width="397" height="67" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.7" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.0/@branchEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.0">
+        <annotations name="Color" value="8421631"/>
+      </flowShapeList>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="115" y="918" width="397" height="55" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" activityNode="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.9">
+        <annotations name="Color" value="8454143"/>
+      </flowShapeList>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="115" y="720" width="397" height="55" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.8" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.4" activityNode="#//@ruleflow/@flowControlList.0/@branches.0/@nextStep.7">
+        <annotations name="Color" value="8454143"/>
+      </flowShapeList>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.7" branch="#//@ruleflow/@flowControlList.0/@branches.0"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="768" y="-6" width="360" height="180" activityNode="#//@ruleflow/@flowControlList.1"/>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="76" y="109" width="185" height="26" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.0">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="76" y="61" width="185" height="26" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.1">
+      <annotations name="Color" value="8421631"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="75" y="13" width="187" height="25" activityNode="#//@ruleflow/@subflowList.0/@flowControlList.2">
+      <annotations name="Color" value="16777088"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.0" targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.2"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.1" targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.8"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.2" targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.5"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.3" targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.6"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.4" targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.9"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.5" targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.3"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.6" targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.4"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.7" targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.0"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.9" targetShape="#//@ruleflowViewList.0/@flowShapeList.0/@flowShapeList.1"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

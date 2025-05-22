@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_PfVdEZczEe20mKTWQQQ3gg" externalChecksum="7824986:1438690353:643269079" rulesheetAssets="definePeriodDate.ers#/ calculateProrata.ers#/ ../CalculateManagementFees/calculateManagementFeesPeriod.ers#/ EndDateSeconds.ers#/ calculateTotal.ers#/ removeAllYearly.ers#/ addFeesContribution.ers#/ calculatedFirstNextLevy.ers#/" ruleflowAssets="ProcessUsageAndOptions/ProcessUsageAndOptions.erf#/">
+  <ruleflow majorVersion="1" vocabularyUpdateStamp="_Q7olUZcaEe2Po7xljc_aDw" vocabulary="../../InsuranceSalesProcess.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Définir la date du fin d'effet" order="1" ruleActivityUpdateStamp="_BEA1Y5WmEe2t9-mCIAEugg" nextStep="#//@ruleflow/@flowControlList.4" invokes="definePeriodDate.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Calcul du Prorata" order="3" ruleActivityUpdateStamp="_qWAEwJZHEe2keaw8gxoNwA" nextStep="#//@ruleflow/@flowControlList.2" invokes="calculateProrata.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="UpdateProcessUsageAndOptions" order="4" ruleActivityUpdateStamp="_GwlkQJczEe20mKTWQQQ3gg" nextStep="#//@ruleflow/@flowControlList.3" invokes="ProcessUsageAndOptions/ProcessUsageAndOptions.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Calculer les frais de dossier proratisée / mensuel (réduction)" order="5" ruleActivityUpdateStamp="_ZlMIEJZJEe2keaw8gxoNwA" nextStep="#//@ruleflow/@flowControlList.5" invokes="../CalculateManagementFees/calculateManagementFeesPeriod.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Mise à jour de la date du fin d'effet" order="2" ruleActivityUpdateStamp="_GaV9gJV9Ee2t9-mCIAEugg" nextStep="#//@ruleflow/@flowControlList.1" invokes="EndDateSeconds.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="calculateTotal" order="6" ruleActivityUpdateStamp="_e9XJ0JZNEe2keaw8gxoNwA" nextStep="#//@ruleflow/@flowControlList.7" invokes="calculateTotal.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="removeAllYearly" order="9" ruleActivityUpdateStamp="_BvFI4XfcEe2nnLfRBxezEA" invokes="removeAllYearly.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="addFeesContribution" order="7" ruleActivityUpdateStamp="_OQA5UZcqEe2Po7xljc_aDw" nextStep="#//@ruleflow/@flowControlList.8" invokes="addFeesContribution.ers#//@ruleset"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="calculatedFirstNextLevy" order="8" ruleActivityUpdateStamp="_me_T5ZcsEe20mKTWQQQ3gg" nextStep="#//@ruleflow/@flowControlList.6" invokes="calculatedFirstNextLevy.ers#//@ruleset"/>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="54" y="60" width="445" height="61" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="54" y="264" width="445" height="61" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.4" activityNode="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="54" y="372" width="445" height="59" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.1" activityNode="#//@ruleflow/@flowControlList.2">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="54" y="474" width="445" height="63" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.3" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.2" activityNode="#//@ruleflow/@flowControlList.3">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="57" y="156" width="439" height="61" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.4" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.4">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="54" y="576" width="451" height="57" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.5" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.3" activityNode="#//@ruleflow/@flowControlList.5">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="54" y="888" width="445" height="55" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.7" activityNode="#//@ruleflow/@flowControlList.6">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="48" y="678" width="457" height="61" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.6" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.5" activityNode="#//@ruleflow/@flowControlList.7">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="54" y="792" width="451" height="61" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.7" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.6" activityNode="#//@ruleflow/@flowControlList.8">
+      <annotations name="Color" value="8454143"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0" targetShape="#//@ruleflowViewList.0/@flowShapeList.4"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.1" targetShape="#//@ruleflowViewList.0/@flowShapeList.2"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.2" targetShape="#//@ruleflowViewList.0/@flowShapeList.3"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.3" targetShape="#//@ruleflowViewList.0/@flowShapeList.5"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.4" targetShape="#//@ruleflowViewList.0/@flowShapeList.1"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.5" targetShape="#//@ruleflowViewList.0/@flowShapeList.7"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.7" targetShape="#//@ruleflowViewList.0/@flowShapeList.8"/>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.8" targetShape="#//@ruleflowViewList.0/@flowShapeList.6"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

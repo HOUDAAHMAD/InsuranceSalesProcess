@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RuleflowAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.canonicalrulemodel.ruleflow="http:///com/corticon/rulesemf/canonicalrulemodel/ruleflow.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram="http:///com/corticon/rulesemf/viewrulemodel/ruleflow/flowdiagram.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_AR_vcGXLEe2Ou5-QAnpMFQ" externalChecksum="7824986:4082745666:643269079" rulesheetAssets="selectDefaultProductBoat.ers#/ selectDefaultProductJet.ers#/" ruleflowAssets="../ProductRating/InsuranceRating.erf#/" studioType="Java">
+  <ruleflow versionLabel="ADC22-52" majorVersion="1" minorVersion="27" vocabularyUpdateStamp="_r3yCkWywEe2_R4mAfmLfoA" vocabulary="../../InsuranceSalesProcess.ecore#/">
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Calcul des tarifs des différents produits" order="1" ruleActivityUpdateStamp="_Wb5c8mv5Ee2b48ZqKZv1Zg" nextStep="#//@ruleflow/@flowControlList.1" invokes="../ProductRating/InsuranceRating.erf#//@ruleflow"/>
+    <flowControlList xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:BranchContainer" name="Sélection du produit par défaut selon le type de risque" order="2" ruleActivityUpdateStamp="_AR_vcGXLEe2Ou5-QAnpMFQ" invokes="#//@ruleflow/@flowControlList.1">
+      <condition expression="Rating.risk.model.type">
+        <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="Rating.risk.model.type" datatype="String" expressiontype="EXPRESSION" enumeration="true" cellValue="false">
+          <referencedTermList>
+            <terms text="type" datatype="String" termtype="ATTRIBUTE" fulltext="Rating.risk.model.type">
+              <parentTerm text="model" datatype="Model" termtype="ENTITY" fulltext="Rating.risk.model">
+                <parentTerm text="risk" datatype="Risk" termtype="ENTITY" fulltext="Rating.risk">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating"/>
+                </parentTerm>
+              </parentTerm>
+            </terms>
+          </referencedTermList>
+        </parserOutput>
+      </condition>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Sélectionner le produit par défaut (jet)" order="3" ruleActivityUpdateStamp="_Gaz-cRo1Ee2fcMX2TyxPUg" invokes="selectDefaultProductJet.ers#//@ruleset"/>
+        <label expression="modelType#jet"/>
+        <viewExpressions lhs="Rating.risk.model.type" rhs="modelType#jet"/>
+      </branches>
+      <branches>
+        <nextStep xsi:type="com.corticon.rulesemf.canonicalrulemodel.ruleflow:ActivityNode" name="Sélectionner le produit par défaut (bateau à moteur / voilier)" order="4" ruleActivityUpdateStamp="_42jxYklqEe2Cfs8A-3g33g" invokes="selectDefaultProductBoat.ers#//@ruleset"/>
+        <label expression="modelType#motorboat"/>
+        <label expression="modelType#sailboat"/>
+        <viewExpressions lhs="Rating.risk.model.type" rhs="modelType#sailboat"/>
+      </branches>
+    </flowControlList>
+  </ruleflow>
+  <ruleflowViewList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:FlowDiagram">
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="480" y="84" width="366" height="36" outboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.0">
+      <annotations name="Color" value="8454016"/>
+    </flowShapeList>
+    <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:BranchContainerShape" x="445" y="165" width="456" height="172" inboundEdges="#//@ruleflowViewList.0/@flowEdgeList.0" activityNode="#//@ruleflow/@flowControlList.1" valid="true" branchContainer="#//@ruleflow/@flowControlList.1">
+      <annotations name="Color" value="16777088"/>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="24" y="9" width="366" height="43" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.1/@branchEdgeList.1" activityNode="#//@ruleflow/@flowControlList.1/@branches.1/@nextStep.0">
+        <annotations name="Color" value="8454143"/>
+      </flowShapeList>
+      <flowShapeList xsi:type="com.corticon.rulesemf.viewrulemodel.ruleflow.flowdiagram:ActivityShape" x="24" y="75" width="366" height="43" inboundEdges="#//@ruleflowViewList.0/@flowShapeList.1/@branchEdgeList.0" activityNode="#//@ruleflow/@flowControlList.1/@branches.0/@nextStep.0">
+        <annotations name="Color" value="8454143"/>
+      </flowShapeList>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.1/@flowShapeList.1" branch="#//@ruleflow/@flowControlList.1/@branches.0"/>
+      <branchEdgeList targetShape="#//@ruleflowViewList.0/@flowShapeList.1/@flowShapeList.0" branch="#//@ruleflow/@flowControlList.1/@branches.1"/>
+    </flowShapeList>
+    <flowEdgeList sourceShape="#//@ruleflowViewList.0/@flowShapeList.0" targetShape="#//@ruleflowViewList.0/@flowShapeList.1"/>
+  </ruleflowViewList>
+</com.corticon.rulesemf.assetmodel:RuleflowAsset>

@@ -1,0 +1,1227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.corticon.rulesemf.assetmodel:RulesheetAsset xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.corticon.rulesemf.asg="http:///com/corticon/rulesemf/asg.ecore" xmlns:com.corticon.rulesemf.assetmodel="http:///com/corticon/rulesemf/assetmodel.ecore" xmlns:com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable="http:///com/corticon/rulesemf/viewrulemodel/rulesheet/decisiontable.ecore" majorVersionNumber="6" minorVersionNumber="1" majorServiceNumber="2" minorServiceNumber="6" buildNumber="8017" updateStamp="_v83FAjtBEe2R6ZqEREmj9g" externalChecksum="7824986:1438690353:643269079">
+  <languageCode>fr_FR</languageCode>
+  <ruleset vocabularyUpdateStamp="_8B3zUDTQEe27Gqoa6AshAg" vocabulary="../../InsuranceSalesProcess.ecore#/">
+    <rule/>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(premium->isEmpty)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premium->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premium" datatype="Boolean" termtype="COLLECTION" fulltext="premium->isEmpty">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premium->isEmpty" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(premiumTaxOnly->isEmpty)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumTaxOnly->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Boolean" termtype="COLLECTION" fulltext="premiumTaxOnly->isEmpty">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premiumTaxOnly->isEmpty" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(premiumWithTax->isEmpty)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumWithTax->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumWithTax" datatype="Boolean" termtype="COLLECTION" fulltext="premiumWithTax->isEmpty">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premiumWithTax->isEmpty" rhs="T"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="premium = Amount.new[yearly = 0, period = 0, monthly = 1.75]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premium = Amount.new [ Amount.yearly = 0 , Amount.period = 0 , Amount.monthly = 1.75 ]" datatype="Amount" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.period">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.monthly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="Amount" termtype="NEW" fulltext="Amount.new">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.yearly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="premiumTaxOnly = Amount.new[yearly = 0, period = 0, monthly = null]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premiumTaxOnly = Amount.new [ Amount.yearly = 0 , Amount.period = 0 , Amount.monthly = null ]" datatype="Amount" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.period">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.monthly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="Amount" termtype="NEW" fulltext="Amount.new">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.yearly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="premiumWithTax = Amount.new[yearly = 0, period = 0, monthly = 1.75]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premiumWithTax = Amount.new [ Amount.yearly = 0 , Amount.period = 0 , Amount.monthly = 1.75 ]" datatype="Amount" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.period">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.monthly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="Amount" termtype="NEW" fulltext="Amount.new">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.yearly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(premium->isEmpty)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premium->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premium" datatype="Boolean" termtype="COLLECTION" fulltext="premium->isEmpty">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premium->isEmpty" rhs="F"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(premiumTaxOnly->isEmpty)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumTaxOnly->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Boolean" termtype="COLLECTION" fulltext="premiumTaxOnly->isEmpty">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premiumTaxOnly->isEmpty" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(premiumWithTax->isEmpty)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumWithTax->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumWithTax" datatype="Boolean" termtype="COLLECTION" fulltext="premiumWithTax->isEmpty">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premiumWithTax->isEmpty" rhs="T"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="premiumTaxOnly = Amount.new[yearly = 0, period = 0, monthly = null]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premiumTaxOnly = Amount.new [ Amount.yearly = 0 , Amount.period = 0 , Amount.monthly = null ]" datatype="Amount" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.period">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.monthly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="Amount" termtype="NEW" fulltext="Amount.new">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.yearly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="premiumWithTax = Amount.new[yearly = 0, period = 0, monthly = 1.75]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premiumWithTax = Amount.new [ Amount.yearly = 0 , Amount.period = 0 , Amount.monthly = 1.75 ]" datatype="Amount" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.period">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.monthly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="Amount" termtype="NEW" fulltext="Amount.new">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.yearly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(premium->isEmpty)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premium->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premium" datatype="Boolean" termtype="COLLECTION" fulltext="premium->isEmpty">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premium->isEmpty" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(premiumTaxOnly->isEmpty)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumTaxOnly->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Boolean" termtype="COLLECTION" fulltext="premiumTaxOnly->isEmpty">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premiumTaxOnly->isEmpty" rhs="F"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(premiumWithTax->isEmpty)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumWithTax->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumWithTax" datatype="Boolean" termtype="COLLECTION" fulltext="premiumWithTax->isEmpty">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premiumWithTax->isEmpty" rhs="T"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="premium = Amount.new[yearly = 0, period = 0, monthly = 1.75]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premium = Amount.new [ Amount.yearly = 0 , Amount.period = 0 , Amount.monthly = 1.75 ]" datatype="Amount" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.period">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.monthly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="Amount" termtype="NEW" fulltext="Amount.new">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.yearly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action/>
+      <action>
+        <opaqueExpression expression="premiumWithTax = Amount.new[yearly = 0, period = 0, monthly = 1.75]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premiumWithTax = Amount.new [ Amount.yearly = 0 , Amount.period = 0 , Amount.monthly = 1.75 ]" datatype="Amount" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.period">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.monthly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="Amount" termtype="NEW" fulltext="Amount.new">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.yearly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(premium->isEmpty)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premium->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premium" datatype="Boolean" termtype="COLLECTION" fulltext="premium->isEmpty">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premium->isEmpty" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(premiumTaxOnly->isEmpty)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumTaxOnly->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Boolean" termtype="COLLECTION" fulltext="premiumTaxOnly->isEmpty">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premiumTaxOnly->isEmpty" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(premiumWithTax->isEmpty)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumWithTax->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumWithTax" datatype="Boolean" termtype="COLLECTION" fulltext="premiumWithTax->isEmpty">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premiumWithTax->isEmpty" rhs="F"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="premium = Amount.new[yearly = 0, period = 0, monthly = 1.75]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premium = Amount.new [ Amount.yearly = 0 , Amount.period = 0 , Amount.monthly = 1.75 ]" datatype="Amount" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.period">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.monthly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="Amount" termtype="NEW" fulltext="Amount.new">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.yearly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+      <action>
+        <opaqueExpression expression="premiumTaxOnly = Amount.new[yearly = 0, period = 0, monthly = null]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premiumTaxOnly = Amount.new [ Amount.yearly = 0 , Amount.period = 0 , Amount.monthly = null ]" datatype="Amount" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.period">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.monthly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="Amount" termtype="NEW" fulltext="Amount.new">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.yearly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(premium->isEmpty)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premium->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premium" datatype="Boolean" termtype="COLLECTION" fulltext="premium->isEmpty">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premium->isEmpty" rhs="F"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(premiumTaxOnly->isEmpty)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumTaxOnly->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Boolean" termtype="COLLECTION" fulltext="premiumTaxOnly->isEmpty">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premiumTaxOnly->isEmpty" rhs="F"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(premiumWithTax->isEmpty)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumWithTax->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumWithTax" datatype="Boolean" termtype="COLLECTION" fulltext="premiumWithTax->isEmpty">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premiumWithTax->isEmpty" rhs="T"/>
+      </condition>
+      <action/>
+      <action/>
+      <action>
+        <opaqueExpression expression="premiumWithTax = Amount.new[yearly = 0, period = 0, monthly = 1.75]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premiumWithTax = Amount.new [ Amount.yearly = 0 , Amount.period = 0 , Amount.monthly = 1.75 ]" datatype="Amount" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.period">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.monthly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="Amount" termtype="NEW" fulltext="Amount.new">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.yearly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(premium->isEmpty)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premium->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premium" datatype="Boolean" termtype="COLLECTION" fulltext="premium->isEmpty">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premium->isEmpty" rhs="F"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(premiumTaxOnly->isEmpty)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumTaxOnly->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Boolean" termtype="COLLECTION" fulltext="premiumTaxOnly->isEmpty">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premiumTaxOnly->isEmpty" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(premiumWithTax->isEmpty)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumWithTax->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumWithTax" datatype="Boolean" termtype="COLLECTION" fulltext="premiumWithTax->isEmpty">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premiumWithTax->isEmpty" rhs="F"/>
+      </condition>
+      <action/>
+      <action>
+        <opaqueExpression expression="premiumTaxOnly = Amount.new[yearly = 0, period = 0, monthly = null]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premiumTaxOnly = Amount.new [ Amount.yearly = 0 , Amount.period = 0 , Amount.monthly = null ]" datatype="Amount" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.period">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.monthly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="Amount" termtype="NEW" fulltext="Amount.new">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.yearly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <rule>
+      <condition>
+        <opaqueExpression expression="(premium->isEmpty)=true">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premium->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premium" datatype="Boolean" termtype="COLLECTION" fulltext="premium->isEmpty">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premium->isEmpty" rhs="T"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(premiumTaxOnly->isEmpty)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumTaxOnly->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Boolean" termtype="COLLECTION" fulltext="premiumTaxOnly->isEmpty">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premiumTaxOnly->isEmpty" rhs="F"/>
+      </condition>
+      <condition>
+        <opaqueExpression expression="(premiumWithTax->isEmpty)=false">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumWithTax->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumWithTax" datatype="Boolean" termtype="COLLECTION" fulltext="premiumWithTax->isEmpty">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+        <viewExpressions lhs="premiumWithTax->isEmpty" rhs="F"/>
+      </condition>
+      <action>
+        <opaqueExpression expression="premium = Amount.new[yearly = 0, period = 0, monthly = 1.75]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premium = Amount.new [ Amount.yearly = 0 , Amount.period = 0 , Amount.monthly = 1.75 ]" datatype="Amount" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.period">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.monthly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="Amount" termtype="NEW" fulltext="Amount.new">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.yearly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products" variable="#//@ruleset/@logicalVariables.0/@extension.0">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </opaqueExpression>
+      </action>
+    </rule>
+    <logicalVariable entity="../../InsuranceSalesProcess.ecore#//Rating">
+      <extension association="true" entity="../../InsuranceSalesProcess.ecore#//Product" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Rating/products">
+        <extension explicit="true" association="true" entity="../../InsuranceSalesProcess.ecore#//Amount" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Product/totalPremium">
+          <alias value="premium"/>
+        </extension>
+        <extension explicit="true" association="true" entity="../../InsuranceSalesProcess.ecore#//Amount" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Product/totalPremiumTaxOnly">
+          <alias value="premiumTaxOnly"/>
+        </extension>
+        <extension explicit="true" association="true" entity="../../InsuranceSalesProcess.ecore#//Amount" traversedAssocRole="../../InsuranceSalesProcess.ecore#//Product/totalPremiumWithTax">
+          <alias value="premiumWithTax"/>
+        </extension>
+      </extension>
+    </logicalVariable>
+    <logicalVariable entity="../../InsuranceSalesProcess.ecore#//Amount">
+      <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Amount/period"/>
+      <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Amount/monthly"/>
+      <referencedAttributes attribute="../../InsuranceSalesProcess.ecore#//Amount/yearly"/>
+    </logicalVariable>
+  </ruleset>
+  <rulesheetViewList xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:DecisionTable" advanced="true">
+    <actionSection rowCount="50" columnWidthFactor="0.5">
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="premium = Amount.new[yearly = 0, period = 0, monthly = 1.75]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premium = Amount.new [ Amount.yearly = 0 , Amount.period = 0 , Amount.monthly = 1.75 ]" datatype="Amount" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.period">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.monthly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="Amount" termtype="NEW" fulltext="Amount.new">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.yearly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="premiumTaxOnly = Amount.new[yearly = 0, period = 0, monthly = null]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premiumTaxOnly = Amount.new [ Amount.yearly = 0 , Amount.period = 0 , Amount.monthly = null ]" datatype="Amount" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.period">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.monthly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="Amount" termtype="NEW" fulltext="Amount.new">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.yearly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+      <actionItemList>
+        <valueSetCell/>
+        <expressionCell external="premiumWithTax = Amount.new[yearly = 0, period = 0, monthly = 1.75]">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premiumWithTax = Amount.new [ Amount.yearly = 0 , Amount.period = 0 , Amount.monthly = 1.75 ]" datatype="Amount" expressiontype="ASSIGNMENT" enumeration="false" cellValue="false">
+            <modifiedTermList>
+              <terms text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                  <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                </parentTerm>
+              </terms>
+            </modifiedTermList>
+            <referencedTermList>
+              <terms text="period" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.period">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="monthly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.monthly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              <terms text="new" datatype="Amount" termtype="NEW" fulltext="Amount.new">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="yearly" datatype="Decimal" termtype="ATTRIBUTE" fulltext="Amount.yearly">
+                <parentTerm text="Amount" datatype="Amount" termtype="ENTITY" fulltext="Amount" variable="#//@ruleset/@logicalVariables.1"/>
+              </terms>
+              <terms text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </actionItemList>
+    </actionSection>
+    <scopeSection>
+      <rootNode>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" expanded="true" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0">
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1"/>
+            <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAssociation" logicalVariable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2"/>
+          </children>
+        </children>
+        <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeEntity" logicalVariable="#//@ruleset/@logicalVariables.1">
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.0"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.1"/>
+          <children xsi:type="com.corticon.rulesemf.viewrulemodel.rulesheet.decisiontable:ScopeAttribute" referencedAttribute="#//@ruleset/@logicalVariables.1/@referencedAttributes.2"/>
+        </children>
+      </rootNode>
+    </scopeSection>
+    <filterSection rowCount="50"/>
+    <ruleStatementSection rowCount="50" columnWidthReference="50" columnWidthPostSeverity="75" columnWidthAlias="100" columnWidthID="50" columnWidthText="600" columnWidthRuleName="100" columnWidthRuleLink="100" columnWidthSourceName="100" columnWidthSourceLink="100" columnWidthCategory="100" columnWidthComments="400"/>
+    <conditionSection rowCount="50" columnWidthFactor="0.5">
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="premium->isEmpty">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premium->isEmpty" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premium" datatype="Boolean" termtype="COLLECTION" fulltext="premium->isEmpty">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="premiumTaxOnly->isEmpty">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premiumTaxOnly->isEmpty" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Boolean" termtype="COLLECTION" fulltext="premiumTaxOnly->isEmpty">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+      <conditionItemList>
+        <valueSetCell/>
+        <expressionCell external="premiumWithTax->isEmpty">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="premiumWithTax->isEmpty" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumWithTax" datatype="Boolean" termtype="COLLECTION" fulltext="premiumWithTax->isEmpty">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </expressionCell>
+      </conditionItemList>
+    </conditionSection>
+    <ruleSection columnCount="20">
+      <ruleColumnList ruleId="0" columnWidth="100" pRule="#//@ruleset/@rules.0"/>
+      <ruleColumnList ruleId="1" columnWidth="100" pRule="#//@ruleset/@rules.1">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premium->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premium" datatype="Boolean" termtype="COLLECTION" fulltext="premium->isEmpty">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumTaxOnly->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Boolean" termtype="COLLECTION" fulltext="premiumTaxOnly->isEmpty">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumWithTax->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumWithTax" datatype="Boolean" termtype="COLLECTION" fulltext="premiumWithTax->isEmpty">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="2" columnWidth="100" pRule="#//@ruleset/@rules.2">
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premium->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premium" datatype="Boolean" termtype="COLLECTION" fulltext="premium->isEmpty">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumTaxOnly->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Boolean" termtype="COLLECTION" fulltext="premiumTaxOnly->isEmpty">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumWithTax->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumWithTax" datatype="Boolean" termtype="COLLECTION" fulltext="premiumWithTax->isEmpty">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="3" columnWidth="100" pRule="#//@ruleset/@rules.3">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premium->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premium" datatype="Boolean" termtype="COLLECTION" fulltext="premium->isEmpty">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumTaxOnly->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Boolean" termtype="COLLECTION" fulltext="premiumTaxOnly->isEmpty">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumWithTax->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumWithTax" datatype="Boolean" termtype="COLLECTION" fulltext="premiumWithTax->isEmpty">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="4" columnWidth="100" pRule="#//@ruleset/@rules.4">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premium->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premium" datatype="Boolean" termtype="COLLECTION" fulltext="premium->isEmpty">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumTaxOnly->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Boolean" termtype="COLLECTION" fulltext="premiumTaxOnly->isEmpty">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumWithTax->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumWithTax" datatype="Boolean" termtype="COLLECTION" fulltext="premiumWithTax->isEmpty">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="5" columnWidth="100" pRule="#//@ruleset/@rules.5">
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premium->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premium" datatype="Boolean" termtype="COLLECTION" fulltext="premium->isEmpty">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumTaxOnly->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Boolean" termtype="COLLECTION" fulltext="premiumTaxOnly->isEmpty">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumWithTax->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumWithTax" datatype="Boolean" termtype="COLLECTION" fulltext="premiumWithTax->isEmpty">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="6" columnWidth="100" pRule="#//@ruleset/@rules.6">
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premium->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premium" datatype="Boolean" termtype="COLLECTION" fulltext="premium->isEmpty">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumTaxOnly->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Boolean" termtype="COLLECTION" fulltext="premiumTaxOnly->isEmpty">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumWithTax->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumWithTax" datatype="Boolean" termtype="COLLECTION" fulltext="premiumWithTax->isEmpty">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList/>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+      <ruleColumnList ruleId="7" columnWidth="100" pRule="#//@ruleset/@rules.7">
+        <conditionValueSetCellList valueSet="T">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premium->isEmpty ) = true" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premium" datatype="Boolean" termtype="COLLECTION" fulltext="premium->isEmpty">
+                <parentTerm text="premium" datatype="Amount" termtype="ENTITY" fulltext="premium" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.0">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumTaxOnly->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumTaxOnly" datatype="Boolean" termtype="COLLECTION" fulltext="premiumTaxOnly->isEmpty">
+                <parentTerm text="premiumTaxOnly" datatype="Amount" termtype="ENTITY" fulltext="premiumTaxOnly" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.1">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <conditionValueSetCellList valueSet="F">
+          <parserOutput xsi:type="com.corticon.rulesemf.asg:Expression" text="( premiumWithTax->isEmpty ) = false" datatype="Boolean" expressiontype="EXPRESSION" enumeration="false" cellValue="false">
+            <referencedTermList>
+              <terms text="premiumWithTax" datatype="Boolean" termtype="COLLECTION" fulltext="premiumWithTax->isEmpty">
+                <parentTerm text="premiumWithTax" datatype="Amount" termtype="ENTITY" fulltext="premiumWithTax" variable="#//@ruleset/@logicalVariables.0/@extension.0/@extension.2">
+                  <parentTerm text="products" datatype="Product" termtype="ENTITY" fulltext="Rating.products">
+                    <parentTerm text="Rating" datatype="Rating" termtype="ENTITY" fulltext="Rating" variable="#//@ruleset/@logicalVariables.0"/>
+                  </parentTerm>
+                </parentTerm>
+              </terms>
+            </referencedTermList>
+          </parserOutput>
+        </conditionValueSetCellList>
+        <actionValueSetCellList valueSet="X"/>
+      </ruleColumnList>
+    </ruleSection>
+  </rulesheetViewList>
+</com.corticon.rulesemf.assetmodel:RulesheetAsset>
